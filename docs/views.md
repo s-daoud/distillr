@@ -4,10 +4,10 @@
 ![splash]
 
 ## Sign Up
-![sign_up]
+![sign-up]
 
 ## Sign In
-![sign_in]
+![sign-in]
 
 ## Landing Page
 ![main]
