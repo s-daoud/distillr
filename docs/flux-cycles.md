@@ -70,14 +70,14 @@ store listeners are listed at the end.
 ### Comment API Request Actions
 
 * `createComment`
-0. invoked from add comment button `onClick`
-0. `POST /api/comments` is called.
-0. `receiveSingleCheckin` is set as the callback.
+  0. invoked from add comment button `onClick`
+  0. `POST /api/comments` is called.
+  0. `receiveSingleCheckin` is set as the callback.
 
 * `destroyComment`
-0. invoked from delete button `onClick`
-0. `DELETE /api/comments/:id` is called.
-0. `receiveSingleCheckin` is set as the callback.
+  0. invoked from delete button `onClick`
+  0. `DELETE /api/comments/:id` is called.
+  0. `receiveSingleCheckin` is set as the callback.
 
 ### Store Listeners
 
@@ -90,42 +90,42 @@ store listeners are listed at the end.
 ### User API Request Actions
 
 * `fetchSingleUser`
-0. invoked from sign in button `onClick`
-0. `GET /users/:id` is called.
-0. `receiveSingleUser` is set as the callback.
+  0. invoked from sign in button `onClick`
+  0. `GET /users/:id` is called.
+  0. `receiveSingleUser` is set as the callback.
 
 * `fetchFriends`
-0. invoked from `FriendIndex` `didMount`
-0. `GET /api/users/:user_id/friends` is called.
-0. `receiveAllFriends` is set as the callback.
+  0. invoked from `FriendIndex` `didMount`
+  0. `GET /api/users/:user_id/friends` is called.
+  0. `receiveAllFriends` is set as the callback.
 
 * `createFriend`
-0. invoked from add friend button `onClick`
-0. `POST /api/friends` is called.
-0. `receiveSingleFriend` is set as the callback.
+  0. invoked from add friend button `onClick`
+  0. `POST /api/friends` is called.
+  0. `receiveSingleFriend` is set as the callback.
 
 * `destroyFriend`
-0. invoked from delete friend button `onClick`
-0. `DELETE api/friends/:id` is called.
-0. `removeFriend` is set as the callback.
+  0. invoked from delete friend button `onClick`
+  0. `DELETE api/friends/:id` is called.
+  0. `removeFriend` is set as the callback.
 
 ### User API Response Actions
 
 * `receiveSingleUser`
-0. invoked from an API callback.
-0. `User` store updates `_current_user` and emits change.
+  0. invoked from an API callback.
+  0. `User` store updates `_current_user` and emits change.
 
 * `receiveAllFriends`
-0. invoked from an API callback.
-0. `User` store updates `_friends` and emits change.
+  0. invoked from an API callback.
+  0. `User` store updates `_friends` and emits change.
 
 * `receiveSingleFriend`
-0. invoked from an API callback.
-0. `User` store updates `_friends[id]` and emits change.
+  0. invoked from an API callback.
+  0. `User` store updates `_friends[id]` and emits change.
 
 * `removeFriend`
-0. invoked from an API callback.
-0. `User` store removes `_friends[id]` and emits change.
+  0. invoked from an API callback.
+  0. `User` store removes `_friends[id]` and emits change.
 
 ### Store Listeners
 
@@ -143,24 +143,24 @@ store listeners are listed at the end.
 ###Drink API Request Actions
 
 * `fetchSingleDrink`
-0. invoked from `DrinkInfo` `didMount`
-0. `GET /api/drinks/:id`
-0. `receiveSingleDrink` is set as callback
+  0. invoked from `DrinkInfo` `didMount`
+  0. `GET /api/drinks/:id`
+  0. `receiveSingleDrink` is set as callback
 
 * `fetchAllDrinks`
-0. invoked from drink input field `onChange` when text is entered
-0. `GET /api/drinks` with text param
-0. `receiveAllDrinks` is set as callback
+  0. invoked from drink input field `onChange` when text is entered
+  0. `GET /api/drinks` with text param
+  0. `receiveAllDrinks` is set as callback
 
 ###Drink API Response Actions
 
 * `receiveSingleDrink`
-0. invoked from API callback
-0. `Drink` Store updates `_drinks[:id]` and emits change
+  0. invoked from API callback
+  0. `Drink` Store updates `_drinks[:id]` and emits change
 
 * `receiveAllDrinks`
-0. invoked from API callback
-0. `Drink` Store updates `_drinks` and emits change
+  0. invoked from API callback
+  0. `Drink` Store updates `_drinks` and emits change
 
 ### Store Listeners
 
@@ -176,35 +176,35 @@ store listeners are listed at the end.
 ### Venue API Request Actions
 
 * `fetchSingleVenue`
-0. invoked from `VenueInfo` `didMount`
-0. `GET /api/venues/:id`
-0. `receiveSingleVenue` is set as callback
+  0. invoked from `VenueInfo` `didMount`
+  0. `GET /api/venues/:id`
+  0. `receiveSingleVenue` is set as callback
 
 * `fetchAllVenues`
-0. invoked from drink input field `onChange` when text is entered
-0. also invoked from map `idle`
-0. `GET /api/venues` with text param or bounds params
-0. `receiveAllVenues` is set as callback
+  0. invoked from drink input field `onChange` when text is entered
+  0. also invoked from map `idle`
+  0. `GET /api/venues` with text param or bounds params
+  0. `receiveAllVenues` is set as callback
 
 * `likeVenue`
-0. invoked from like button `onClick`
-0. `POST /api/venue_likes`
-0. `receiveSingleVenue` is set as callback
+  0. invoked from like button `onClick`
+  0. `POST /api/venue_likes`
+  0. `receiveSingleVenue` is set as callback
 
 * `unlikeVenue`
-0. invoked from unlike button `onClick`
-0. `DELETE /api/venue_likes/:id`
-0. `receiveSingleVenue` is set as callback
+  0. invoked from unlike button `onClick`
+  0. `DELETE /api/venue_likes/:id`
+  0. `receiveSingleVenue` is set as callback
 
 ### Venue API Response Actions
 
 * `receiveSingleVenue`
-0. invoked from API callback
-0. `Venue` Store updates `_venues[:id]` and emits change
+  0. invoked from API callback
+  0. `Venue` Store updates `_venues[:id]` and emits change
 
 * `receiveAllVenues`
-0. invoked from API callback
-0. `Venue` Store updates `_venues` and emits change
+  0. invoked from API callback
+  0. `Venue` Store updates `_venues` and emits change
 
 ### Store Listeners
 
