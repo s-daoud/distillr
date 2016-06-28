@@ -57,9 +57,3 @@
 - `POST /api/venue_likes`
 - `DELETE /api/venue_likes/:id`
 
-### Badges
-- `GET /api/badges`
-
-### UserBadges
-- `POST /api/user_badges`
-

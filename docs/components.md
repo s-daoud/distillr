@@ -21,7 +21,6 @@
   * **VenueInfo**
   * MapVenue
   * UserInfo
-  * Badges
   * MapIndex
     * VenueIndex
       * VenueIndexItem

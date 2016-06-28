@@ -120,20 +120,7 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [ ] research how to implement and create tables and models for recipes, ingredients, directions
 - [ ] add recipe component to drink page
 
-### Phase 8: Badges (1 day, W2D4)
-
-**Objective:** Allow users to earn badges based on drinks consumed
-
-- [ ] find images for badges, decide categories
-- [ ] set up models, controllers, API/flux loop for badges and join table for user_badges
-- [ ] figure out how to keep track of/implement earning a badge
-- [ ] add badges to profile pages, landing page
-- [ ] create badge page with badge list items. greyed out unearned badges
-- [ ] add num badges to user info pane
-- [ ] add badge page navigation to username dropdown in nav bar
-- [ ] style badge components and page
-
-### Phase 9: Cleanup and seeding (1 day, W2D5)
+### Phase 8: Cleanup and seeding (1 day, W2D4)
 
 **Objective:** Polish everything, make everything cohesive and pretty and functional
 
@@ -144,6 +131,8 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 
 ### Bonus Features (TBD)
+- [ ] create drinks/venues
+- [ ] badges
 - [ ] infinite scroll for feeds
 - [ ] top rated drinks on more pages
 - [ ] each checkin has it's own page with details about who liked it/all comments

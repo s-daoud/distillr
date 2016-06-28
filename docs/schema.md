@@ -65,16 +65,4 @@ id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
 venue_id    | integer   | not null, foreign key (references venues), indexed, unique [user_id]
 
-## badges
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null, unique
-image_url   | string    | not null
 
-## user_badges
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-badge_id    | integer   | not null, foreign key (references badges), indexed, unique [user_id]
