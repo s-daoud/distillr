@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
   <title>Distillr</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <script type="text/javascript">
+    <% if current_user %>
+      window.currentUser = <%= render("api/users/user.json.jbuilder",
+                                      user: current_user).html_safe %>
+    <% else %>
+      window.currentUser = {}
+    <% end %>
+  </script>
 
 <%= yield %>
 

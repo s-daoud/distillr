@@ -1,0 +1,112 @@
+h1{
+  color: #fff;
+  font-size: 72px;
+}
+
+input[type="text"], input[type="password"]{
+  padding: 5px;
+  margin: 5px 0;
+  border: solid 1px #c9c9c9;
+  box-shadow: inset 0 0 0 1px #707070;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus{
+  border: solid 1px #969696;
+}
+
+input[type="text"]:first-child{
+  margin-top: 50px;
+}
+
+.form{
+  width: 161px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.main{
+  background-image: url(/assets/splash.jpg);
+  background-size: contain;
+  max-width: 1048px;
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+}
+
+.splash-nav{
+  position: relative;
+  top: 215px;
+  left: 300px;
+  width: 205px;
+}
+
+.buttons{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 5px 5px 0;
+  padding: 5px 5px 5px 0;
+  color: #fff;
+}
+
+.padded-button, input[type="submit"]{
+  border-radius: 5px;
+  background-color: #0080bc;
+  color: #fff;
+  height: 20px;
+  width: 90px;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.entry{
+  position: relative;
+  left: 25px;
+}
+
+.modal{
+  width: 400px;
+  height: 200px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.error{
+  display: inline-block;
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.error:nth-child(2){
+  display: inline-block;
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  margin-top: 15px;
+}
+
+#guest{
+  width: 205px;
+  text-align: center;
+  text-decoration: underline;
+  color: #fff;
+}
