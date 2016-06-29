@@ -15,6 +15,7 @@ const SessionActions = require('./actions/session_actions');
 
 const SplashPage = require('./components/splash_page');
 const FeedPage = require('./components/feed_page');
+const DrinkPage = require('./components/drink_page');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
@@ -32,13 +33,14 @@ const routes = (
   <Router history={hashHistory}>
     <Route path="/" component={SplashPage} onEnter={requireAnonymous}/>
     <Route component={FeedPage} path="index" onEnter={_ensureLoggedIn}/>
+    <Route component={DrinkPage} path="drinks/:drinkId" />
     <Route component={LoginForm} path="login" />
     <Route component={SignupForm} path="signup" />
   </Router>
 );
 
 document.addEventListener("DOMContentLoaded", () => {
-  SessionActions.receiveCurrentUser(window.currentUser);
+  SessionActions.receiveUser(window.currentUser);
   Modal.setAppElement(document.body);
   ReactDOM.render(
     routes,

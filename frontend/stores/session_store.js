@@ -13,6 +13,11 @@ SessionStore._login = function(payload){
   this.__emitChange();
 };
 
+SessionStore._found = function(payload){
+  _currentUser = payload.user;
+  this.__emitChange();
+};
+
 SessionStore._logout = function(){
   _currentUser = {};
   hashHistory.push("/");
@@ -34,6 +39,9 @@ SessionStore.__onDispatch = function(payload){
       break;
     case SessionConstants.LOGOUT:
       this._logout();
+      break;
+    case SessionConstants.USER_FOUND:
+      this._found(payload);
       break;
   }
 };

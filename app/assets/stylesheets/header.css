@@ -16,6 +16,10 @@ header{
   box-sizing: border-box;
 }
 
+.left-header{
+  display: flex
+}
+
 .logo{
   padding: 10px 20px;
 }
@@ -48,6 +52,26 @@ header{
 
 .dropdown-list li:hover{
   background-color: #111;
+}
+
+.add-form{
+  width: 400px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: -45px;
+}
+
+.drink-form li{
+  width: 500px;
+  height: 320px;
+}
+
+#add{
+  position: relative;
+  left: 25px;
+  width: 120px;
+  height: 35px;
 }
 
 .header-list:hover .dropdown-list {

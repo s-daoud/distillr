@@ -5,11 +5,7 @@ class Api::UsersController < ApplicationController
       login(@user)
       render :show
     else
-      all_errors = []
-      @user.errors.each do |k, v|
-        all_errors << "#{k.capitalize} #{v}"
-      end
-      render json: {base: all_errors}, status: 401
+      render json: {base: @user.errors.full_messages}, status: 401
     end
   end
 

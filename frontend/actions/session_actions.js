@@ -25,6 +25,19 @@ const SessionActions = {
         user: user
       });
     }
+  },
+  receiveUser(user){
+    if (Object.keys(user).length) {
+      dispatcher.dispatch({
+        actionType: SessionConstants.USER_FOUND,
+        user: user
+      });
+    } else {
+      dispatcher.dispatch({
+        actionType: SessionConstants.LOGOUT,
+        user: user
+      });
+    }
   }
 };
 
