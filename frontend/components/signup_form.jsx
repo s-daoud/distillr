@@ -46,7 +46,6 @@ const SignupForm = React.createClass({
 
     return (
       <div>
-        {/*<h3>Sign Up</h3>*/}
         {errors}
         <form onSubmit={this.handleSubmit} className="form">
           <input type="text" onChange={this.updateName} placeholder="Username"/> <br />

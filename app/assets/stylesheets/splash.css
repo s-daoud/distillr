@@ -27,6 +27,7 @@ input[type="text"]:first-child{
 
 .main{
   background-image: url('<%= asset_path("splash.jpg") %> ');
+  /*background-image: url(/assets/splash.jpg);*/
   background-repeat: no-repeat;
   background-size: contain;
   max-width: 1048px;
