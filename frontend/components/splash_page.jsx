@@ -74,5 +74,5 @@ const SplashPage = React.createClass({
     );
   }
 });
-
+ 
 module.exports = SplashPage;
