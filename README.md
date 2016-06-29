@@ -8,8 +8,8 @@
 
 Distillr is a web application inspired by Untappd that will be built using Ruby on Rails and React.js. By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] Hosting on Heroku
+- [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Checkins
   - [ ] Smooth, bug-free navigation
@@ -47,21 +47,22 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 **Objective:** Functional project with authentication and associations
 
-- [ ] create new project
-- [ ] create models: `User`, `Friend`, `Drink`, `Checkin`, `Comment`, `Like`, `Venue`, `VenueLike`
-- [ ] create controllers: `Users`, `Session`, `Friends`, `Drinks`, `Checkins`, `Comments`, `Likes`, `Venues`, `VenueLikes`
-- [ ] authentication
-- [ ] user sign in/sign up pages
-- [ ] guest sign in
-- [ ] splash page
-- [ ] landing page after sign in with basic navbar
+- [x] create new project
+- [x] create models: `User`
+- [x] create controllers: `Users`, `Session`
+- [x] authentication
+- [x] user sign in/sign up pages
+- [x] guest sign in
+- [x] splash page
+- [x] landing page after sign in with basic navbar
 
 ### Phase 2: Flux architecture for checkins (1 day, W1D3)
 
 **Objective:** Checkins can be created, deleted, and displayed. They can be liked or commented on
 
+- [ ] create models: `Checkin`, `Comment`, `Like`
+- [ ] create controllers: `Checkins`, `Comments`, `Likes`
 - [ ] seed database
-- [ ] jbuilder views
 - [ ] setup API and flux loop for checkin cycle
 - [ ] make sure checkin form works
 - [ ] setup API/flux loop for like and comment cycles
@@ -71,7 +72,8 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 **Objective:** Users have profile pages which display their activity and a page that lists all their friends
 
-- [ ] setup react router
+- [ ] create models: `Friend`
+- [ ] create controllers: `Friends`
 - [ ] setup API/flux for users cycle
 - [ ] add ability to friend/unfriend users
 - [ ] add user info pane to landing page - tracks total number of drinks, unique drinks, number of friends
@@ -83,6 +85,8 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 **Objective:** Drinks have their own pages with feed with people who have rated them
 
+- [ ] create models: `Drink`
+- [ ] create controllers: `Drinks`
 - [ ] setup API/flux for drinks cycle
 - [ ] add interactive search functionality to checkin form
 - [ ] style drink page
@@ -92,6 +96,8 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 **Objective:** Add venues! With pages, ability to include them in checkins, and location searching
 
+- [ ] create models: `Venue`, `VenueLike`
+- [ ] create controllers: `Venues`, `VenueLikes`
 - [ ] setup API/flux for venues cycle
 - [ ] venue page with info, static map with location marker, and feed with checkins at that venue
 - [ ] like/unlike button on the venue page
