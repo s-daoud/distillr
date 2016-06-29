@@ -1,3 +1,7 @@
+html, body{
+  height: 100%;
+}
+
 h1{
   color: #fff;
   font-size: 72px;
@@ -19,6 +23,17 @@ input[type="text"]:first-child{
   margin-top: 50px;
 }
 
+#content{
+  height: 100%;
+}
+
+.container{
+  max-width: 1048px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
 .form{
   width: 161px;
   margin: 0 auto;
@@ -28,10 +43,11 @@ input[type="text"]:first-child{
 .main{
   background-image: url(/assets/splash.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   max-width: 1048px;
   width: 100%;
-  height: 700px;
+  max-height: 650px;
+  height: 100%;
   margin: 0 auto;
   border: 1px solid #ddd;
 }
@@ -74,7 +90,7 @@ input[type="text"]:first-child{
   height: 200px;
   background-color: #fff;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   right: auto;
   bottom: auto;
@@ -103,6 +119,21 @@ input[type="text"]:first-child{
   margin-right: -50%;
   transform: translate(-50%, -50%);
   margin-top: 15px;
+}
+
+.splash-info{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.splash-info > div{
+  flex: 1;
+  padding: 30px;
+}
+
+.splash-info > div:first-child{
+  border-right: 2px solid white;
 }
 
 #guest{
