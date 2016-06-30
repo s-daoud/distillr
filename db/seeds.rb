@@ -1,10 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-User.create!({username: "Guest", password: "password"})
-User.create!({username: "Ari", password: "Nutmeg"})
+Drink.create([
+  {name: "Old Fashioned", description: "The Old Fashioned is a cocktail made by muddling sugar with bitters, then adding alcohol, such as whiskey or brandy, and a twist of citrus rind. It is traditionally served in a short, round, 812 US fl oz (240350 ml) tumbler-like glass, which is called an Old Fashioned glass, named after the drink.\n\nThe Old Fashioned, developed during the 19th century and given its name in the 1880s, is an IBA Official Cocktail. It is also one of six basic drinks listed in David A. Embury's The Fine Art of Mixing Drinks.", image_url: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Whiskey_Old_Fashioned1.jpg"},
+  {name: "Negroni", description: "The Negroni cocktail is made of one part gin, one part vermouth rosso (red, semi-sweet), and one part Campari, garnished with orange peel. It is considered an aperitif.", image_url: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Negroni_served_in_Vancouver_BC.jpg"},
+  {name: "Mojito", description: "Traditionally, a mojito is a cocktail that consists of five ingredients: white rum, sugar (traditionally sugar cane juice), lime juice, sparkling water, and mint. The original Cuban recipe uses spearmint or yerba buena, a mint variety very popular on the island. Its combination of sweetness, refreshing citrus, and mint flavors is intended to complement the potent kick of the rum, and has made this clear highball a popular summer drink. The cocktail has a relatively low alcohol content (about 10 percent alcohol by volume).", image_url: "https://upload.wikimedia.org/wikipedia/commons/8/87/15-09-26-RalfR-WLC-0067.jpg"},
+  {name: "Margarita", description: "The margarita is a cocktail consisting of tequila, triple sec and lime or lemon juice, often served with salt on the rim of the glass. The drink is served shaken with ice (on the rocks), blended with ice (frozen margarita), or without ice (straight up). Although it has become acceptable to serve a margarita in a wide variety of glass types, ranging from cocktail and wine glasses to pint glasses and even large schooners, the drink is traditionally served in the eponymous margarita glass, a stepped-diameter variant of a cocktail glass or champagne coupe.", image_url: "https://upload.wikimedia.org/wikipedia/commons/3/37/MargaritaReal.jpg"},
+  {name: "Sazerac", description: "The Sazerac is a local New Orleans variation of a Cognac or whiskey cocktail, named for the Sazerac de Forge et Fils brand of Cognac brandy that served as its original main ingredient. The drink is most traditionally a combination of Cognac or rye, absinthe, Peychaud's Bitters, and sugar, although bourbon whiskey or Herbsaint are sometimes substituted. Some claim it is the oldest known American cocktail, with origins in pre–Civil War New Orleans, although drink historian David Wondrich is among those who dispute this, and American instances of published usage of the word cocktail to describe a mixture of spirits, bitters, and sugar can be traced to the dawn of the 19th century.", image_url: "https://upload.wikimedia.org/wikipedia/commons/d/dd/SazeracRooseveltNOLA1July2009.JPG"},
+  {name: "Clover Club", description: "The Clover Club Cocktail is a cocktail consisting of Gin, Lemon Juice, Raspberry Syrup, and an egg white. The egg white is not added for the purpose of giving the drink flavor, but rather acts as an emulsifier. Thus when the drink is shaken a characteristic foamy head is formed.", image_url: "https://upload.wikimedia.org/wikipedia/en/9/99/Cloverclub.jpg"},
+  {name: "Martini", description: "The Martini is a cocktail made with gin and vermouth, and garnished with an olive or a lemon twist. Over the years, the Martini has become one of the best-known mixed alcoholic beverages. H. L. Mencken called the Martini \"the only American invention as perfect as the sonnet\" and E. B. White called it \"the elixir of quietude\".", image_url: "https://upload.wikimedia.org/wikipedia/commons/8/80/15-09-26-RalfR-WLC-0084.jpg"}
+])
+User.create([
+  {username: "Sinlen", password_digest: "$2a$10$T2zlNgg5hsCYrDCrwTqgsuC6SLjr247U3BYySpZSmcRsJWKhuKHI2", session_token: "WIZG7Wm6R-G33zKKEzmPxA"},
+  {username: "Ashara", password_digest: "$2a$10$YqFjZilXjB2vfweKEZizsulfRVK7t9S03N8UducnOmtzFpA2IKzL.", session_token: "-mqo0yft9emhONpcnznZ0Q"},
+  {username: "Ari", password_digest: "$2a$10$pR1Afr0wU9iX0fZL0kWyKeCQnEQHw1BcW9rM61NRmmkDkHy9MHs2O", session_token: "Ea-4uh4vU3OqIJMdLef29Q"},
+  {username: "Guest", password_digest: "$2a$10$eWhx6d24cGB2LnwQO7ZnauEwYEyZHh4.vyUq2aigMb3Se2InO5TqK", session_token: "GNe3O2iWVD-1fWRJlY0ZoQ"}
+])

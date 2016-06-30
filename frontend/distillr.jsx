@@ -16,6 +16,7 @@ const SessionActions = require('./actions/session_actions');
 const SplashPage = require('./components/splash_page');
 const FeedPage = require('./components/feed_page');
 const DrinkPage = require('./components/drink_page');
+const CheckinIndex = require('./components/checkin_index');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
@@ -29,13 +30,32 @@ const requireAnonymous = function(nextState, replace){
   }
 };
 
+const App = React.createClass({
+  render(){
+    let nav = (<div></div>);
+
+    if(this.props.location.pathname !== "/"){
+      nav = <FeedPage />;
+    }
+
+    return (
+      <div className="app-container">
+        {nav}
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
 const routes = (
   <Router history={hashHistory}>
-    <Route path="/" component={SplashPage} onEnter={requireAnonymous}/>
-    <Route component={FeedPage} path="index" onEnter={_ensureLoggedIn}/>
-    <Route component={DrinkPage} path="drinks/:drinkId" />
-    <Route component={LoginForm} path="login" />
-    <Route component={SignupForm} path="signup" />
+    <Route path="/" component={App}>
+      <IndexRoute component={SplashPage} onEnter={requireAnonymous}/>
+      <Route component={CheckinIndex} path="index" onEnter={_ensureLoggedIn}/>
+      <Route component={DrinkPage} path="drinks/:drinkId" />
+      <Route component={LoginForm} path="login" />
+      <Route component={SignupForm} path="signup" />
+    </Route>
   </Router>
 );
 

@@ -25,7 +25,7 @@ SessionStore._logout = function(){
 };
 
 SessionStore.currentUser = function(){
-  return _currentUser.username;
+  return _currentUser;
 };
 
 SessionStore.isUserLoggedIn = function(){

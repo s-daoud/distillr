@@ -1,5 +1,6 @@
 const React = require('react');
 const Link = require('react-router').Link;
+const hashHistory = require('react-router').hashHistory;
 
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
@@ -7,9 +8,15 @@ const SessionStore = require('../stores/session_store');
 const DrinkActions = require('../actions/drink_actions');
 const DrinkForm = require('./drink_form');
 
+const CheckinIndex = require('./checkin_index');
+
 const FeedPage = React.createClass({
   componentDidMount(){
     DrinkActions.fetchAllDrinks();
+  },
+  goToFeed(e){
+    e.preventDefault();
+    hashHistory.push('index');
   },
   render(){
     return (
@@ -33,9 +40,9 @@ const FeedPage = React.createClass({
             </ul>
             <ul className="header-list">
               <a href="#">
-                <li className="dropdown">{SessionStore.currentUser()}
+                <li className="dropdown">{SessionStore.currentUser().username}
                   <ul className="dropdown-list">
-                    <li>
+                    <li onClick={this.goToFeed}>
                       Recent Activity
                     </li>
                     <li>

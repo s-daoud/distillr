@@ -1,5 +1,5 @@
 module.exports = {
-  fetchAllDrinks(success, error){
+  fetchAllDrinks(success){
     $.ajax({
       url: "api/drinks",
       success(resp){
@@ -7,7 +7,7 @@ module.exports = {
       }
     });
   },
-  fetchSingleDrink(id, success, error){
+  fetchSingleDrink(id, success){
     $.ajax({
       url: `api/drinks/${id}`,
       success(resp){

@@ -24,7 +24,6 @@ const DrinkPage = React.createClass({
   render(){
     return(
       <div>
-        <FeedPage />
         {this.state.drink.name} <br />
         {this.state.drink.description} <br />
         <img className="drink-img" src={this.state.drink.image_url} />

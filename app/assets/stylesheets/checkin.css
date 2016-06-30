@@ -1,0 +1,24 @@
+.drink-dropdown{
+  display: none;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  width: 161px;
+  top: 35%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.drink-dropdown li{
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.focus{
+  display: block;
+  position: absolute;
+}

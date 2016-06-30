@@ -36,6 +36,10 @@ input[type="text"]:first-child{
   margin: 0 auto;
 }
 
+.app-container{
+  height: 100%;
+}
+
 .form{
   width: 161px;
   margin: 0 auto;
