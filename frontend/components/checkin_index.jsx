@@ -3,7 +3,6 @@ const CheckinStore = require('../stores/checkin_store');
 const CheckinForm = require('./checkin_form');
 const CheckinIndexItem = require('./checkin_index_item');
 const CheckinActions = require('../actions/checkin_actions');
-const FeedPage = require('./feed_page');
 
 const CheckinIndex = React.createClass({
   getInitialState(){
@@ -26,10 +25,8 @@ const CheckinIndex = React.createClass({
         {
           this.state.checkins.reverse().map( checkin => {
             return (
-              <div>
-                <hr />
-                <CheckinIndexItem key={checkin.id} checkin={checkin}/>
-              </div>);
+              <CheckinIndexItem key={checkin.id} checkin={checkin}/>
+            );
           })
         }
       </div>

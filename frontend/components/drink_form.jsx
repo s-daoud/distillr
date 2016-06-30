@@ -2,7 +2,6 @@ const React = require('react');
 const DrinkActions = require('../actions/drink_actions');
 const hashHistory = require('react-router').hashHistory;
 const ErrorStore = require('../stores/error_store');
-const FeedPage = require('./feed_page');
 
 const DrinkForm = React.createClass({
   getInitialState(){

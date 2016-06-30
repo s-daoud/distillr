@@ -5,12 +5,8 @@
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
   width: 161px;
-  top: 35%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 82px;
 }
 
 .drink-dropdown li{
@@ -21,4 +17,8 @@
 .focus{
   display: block;
   position: absolute;
+}
+
+#checkin{
+  position: relative;
 }

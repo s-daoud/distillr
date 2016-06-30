@@ -1,8 +1,6 @@
 const Store = require('flux/utils').Store;
 const dispatcher = require('../dispatcher/dispatcher');
 const CheckinConstants = require('../constants/checkin_constants');
-const CommentConstants = require('../constants/comment_constants');
-const LikeConstants = require('../constants/like_constants');
 const hashHistory = require('react-router').hashHistory;
 
 let _checkins = {};
@@ -56,8 +54,4 @@ module.exports = CheckinStore;
 
 // all friends
 // all drinks
-
-// add comment - add checkin
-// add like - add checkin
-// delete comment - add checkin
-// delete like - add checkin
+// all me

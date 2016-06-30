@@ -14,7 +14,7 @@ const SessionStore = require('./stores/session_store');
 const SessionActions = require('./actions/session_actions');
 
 const SplashPage = require('./components/splash_page');
-const FeedPage = require('./components/feed_page');
+const NavBar = require('./components/nav_bar');
 const DrinkPage = require('./components/drink_page');
 const CheckinIndex = require('./components/checkin_index');
 
@@ -35,7 +35,7 @@ const App = React.createClass({
     let nav = (<div></div>);
 
     if(this.props.location.pathname !== "/"){
-      nav = <FeedPage />;
+      nav = <NavBar />;
     }
 
     return (

@@ -3,13 +3,13 @@ class Api::LikesController < ApplicationController
     @like = Like.new(like_params)
     @like.user_id = current_user.id
     @like.save
-    render json: @like.checkin
+    render :show
   end
 
   def destroy
     @like = Like.find(params[:id])
     @like.destroy!
-    render json: @like.checkin
+    render :show
   end
 
   private

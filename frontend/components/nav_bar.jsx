@@ -10,7 +10,7 @@ const DrinkForm = require('./drink_form');
 
 const CheckinIndex = require('./checkin_index');
 
-const FeedPage = React.createClass({
+const NavBar = React.createClass({
   componentDidMount(){
     DrinkActions.fetchAllDrinks();
   },
@@ -66,4 +66,4 @@ const FeedPage = React.createClass({
   }
 });
 
-module.exports = FeedPage;
+module.exports = NavBar;

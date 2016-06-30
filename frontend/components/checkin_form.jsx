@@ -33,13 +33,14 @@ const CheckinForm = React.createClass({
   },
   autoDrink(e){
     e.preventDefault();
+    console.log("hi");
     const drink = {};
     Object.keys(this.allDrinks).forEach( drinkId => {
       if (this.allDrinks[drinkId].name === (e.target.className)) {
         drink[drinkId] = this.allDrinks[drinkId];
       }
     });
-    this.setState({drink: e.target.className, drinkList: drink});
+    this.setState({drink: e.target.className, drinkList: drink, focused:false});
   },
   updateRating(val){
     this.setState({rating: val})
@@ -60,10 +61,6 @@ const CheckinForm = React.createClass({
   focus(e){
     e.preventDefault();
     this.setState({focused: true});
-  },
-  blur(e){
-    e.preventDefault();
-    this.setState({focused: false});
   },
   render(){
     let errors = "";
@@ -89,10 +86,10 @@ const CheckinForm = React.createClass({
     return (
       <div>
         {errors}
-        <ul className={className}>{drinkDropdown}</ul>
-        <form onSubmit={this.handleSubmit} className="form">
-          <input type="text" onFocus={this.focus} onBlur={this.blur}
+        <form onSubmit={this.handleSubmit} className="form" id="checkin">
+          <input type="text" onFocus={this.focus}
                  onChange={this.updateDrink} value={this.state.drink} placeholder="Drink" />
+          <ul className={className}>{drinkDropdown}</ul>
 
           <RadioGroup name="rating" onChange={this.updateRating}>
             <Radio value="1" />1

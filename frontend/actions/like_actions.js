@@ -1,5 +1,4 @@
 const dispatcher = require('../dispatcher/dispatcher');
-const LikeConstants = require('../constants/like_constants');
 const CheckinConstants = require('../constants/checkin_constants');
 const LikeApiUtil = require('../util/like_api_util');
 const ErrorActions = require('./error_actions');
