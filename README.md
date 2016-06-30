@@ -12,11 +12,11 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Checkins
-  - [ ] Smooth, bug-free navigation
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
 - [ ] Feed
-  - [ ] Smooth, bug-free navigation
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
 - [ ] Friends
@@ -56,17 +56,18 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [x] splash page
 - [x] landing page after sign in with basic navbar
 
-### Phase 2: Flux architecture for checkins (1 day, W1D3)
+### Phase 2: Flux architecture for drinks, checkins (1 day, W1D3)
 
-**Objective:** Checkins can be created, deleted, and displayed. They can be liked or commented on
+**Objective:** Checkins can be created, deleted, and displayed. Drinks exist.
 
-- [ ] create models: `Checkin`, `Comment`, `Like`
-- [ ] create controllers: `Checkins`, `Comments`, `Likes`
-- [ ] seed database
-- [ ] setup API and flux loop for checkin cycle
-- [ ] make sure checkin form works
-- [ ] setup API/flux loop for like and comment cycles
-- [ ] style feed
+- [x] create models: `Checkin`, `Comment`, `Like`
+- [x] create controllers: `Checkins`, `Comments`, `Likes`
+- [x] create models: `Drink`
+- [x] create controllers: `Drinks`
+- [x] setup API/flux for drinks cycle
+- [x] add interactive search functionality to checkin form
+- [x] setup API and flux loop for checkin cycle
+- [x] make sure checkin form works
 
 ### Phase 3: Users and friends (1 day, W1D4)
 
@@ -78,18 +79,17 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [ ] add ability to friend/unfriend users
 - [ ] add user info pane to landing page - tracks total number of drinks, unique drinks, number of friends
 - [ ] add user dropdown to navbar
-- [ ] style profile page
-- [ ] style friends page
+- [ ] add feed to drink page
 
-### Phase 4: Drinks and styling (1 day, W1D5)
+### Phase 4: Comments/likes and styling (1 day, W1D5)
 
 **Objective:** Drinks have their own pages with feed with people who have rated them
 
-- [ ] create models: `Drink`
-- [ ] create controllers: `Drinks`
-- [ ] setup API/flux for drinks cycle
-- [ ] add interactive search functionality to checkin form
+- [ ] setup API/flux loop for like and comment cycles
 - [ ] style drink page
+- [ ] style feed
+- [ ] style profile page
+- [ ] style friends page
 - [ ] MVP (hopefully) functional! spend the rest of the day refining styling on all pages so far
 
 ### Phase 5: Venues (1 day, W2D1)

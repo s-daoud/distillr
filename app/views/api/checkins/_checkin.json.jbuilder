@@ -4,3 +4,5 @@ json.drink checkin.drink.name
 json.rating checkin.rating
 json.review checkin.review
 json.drinkId checkin.drink.id
+json.comments checkin.comments
+json.likes checkin.likes
