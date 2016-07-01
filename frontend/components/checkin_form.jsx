@@ -30,7 +30,7 @@ const CheckinForm = React.createClass({
         drinks[id] = this.allDrinks[id];
       }
     });
-    this.setState({drink: e.target.value, drinkList: drinks});
+    this.setState({drink: e.target.value, drinkList: drinks, focused: true});
   },
   autoDrink(e){
     e.preventDefault();
@@ -40,7 +40,7 @@ const CheckinForm = React.createClass({
         drink[drinkId] = this.allDrinks[drinkId];
       }
     });
-    this.setState({drink: e.target.className, drinkList: drink, focused:false});
+    this.setState({drink: e.target.className, drinkList: drink, focused: false});
   },
   updateRating(rating){
     this.setState({rating: rating});
@@ -65,6 +65,10 @@ const CheckinForm = React.createClass({
     e.preventDefault();
     this.setState({focused: true});
   },
+  blur(e){
+    e.preventDefault();
+    this.setState({focused: false});
+  },
   render(){
     let errors = "";
     if(this.state.errors){
@@ -77,7 +81,7 @@ const CheckinForm = React.createClass({
     const drinkDropdown = Object.keys(drinkList).map( drinkId => {
       return <li key={drinkList[drinkId].id}
                  className={drinkList[drinkId].name}
-                 onClick={this.autoDrink}>{drinkList[drinkId].name}
+                 onMouseDown={this.autoDrink}>{drinkList[drinkId].name}
              </li>;
     });
 
@@ -90,14 +94,14 @@ const CheckinForm = React.createClass({
       <div>
         {errors}
         <form onSubmit={this.handleSubmit} className="form" id="checkin">
-          <input type="text" onFocus={this.focus}
+          <input type="text" onFocus={this.focus} onBlur={this.blur}
                  onChange={this.updateDrink} value={this.state.drink} placeholder="Drink" />
-          <ul className={className}>{drinkDropdown}</ul>
+          <ul onMouseOver={this.focus} className={className}>{drinkDropdown}</ul>
 
           <div>
             <Rating initialRate={this.state.initialRating} onChange={this.updateRating} onClick={this.updateInitial}/>
           </div>
-          
+
           <textarea onChange={this.updateReview} placeholder="Review (optional)" rows="2" cols="30"/> <br />
           <input type="submit" value="Check in!"/>
         </form>

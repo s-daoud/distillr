@@ -86,13 +86,13 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 **Objective:** Users can have friends and follow only their feeds on their main page
 
+- [ ] style checkin form
 - [ ] create models: `Friend`
 - [ ] create controllers: `Friends`
 - [ ] setup API/flux for friends cycle
 - [ ] add ability to friend/unfriend users
 - [ ] main feed only displays friends
 - [ ] style friends page
-- [ ] style checkin form
 - [ ] MVP (hopefully) functional! spend the rest of the day refining styling on all pages so far
 
 ### Phase 5: Venues (1 day, W2D1)

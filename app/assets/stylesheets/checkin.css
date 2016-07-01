@@ -102,6 +102,10 @@ h4{
   background-color: #333;
 }
 
+.clicked:hover{
+  background-color: #000;
+}
+
 .num-cheers{
   background-color: #f9f9f9;
   border-radius: 4px;
