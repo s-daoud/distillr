@@ -39,6 +39,7 @@ header{
   top: 41px;
   left: -30px;
   vertical-align: left;
+  z-index: 1;
 }
 
 .dropdown-list li {

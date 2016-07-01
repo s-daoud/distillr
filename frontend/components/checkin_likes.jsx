@@ -1,6 +1,5 @@
 const React = require('react');
 
-const CheckinStore = require('../stores/checkin_store');
 const SessionStore = require('../stores/session_store');
 const LikeActions = require('../actions/like_actions');
 
@@ -34,14 +33,14 @@ const CheckinLike = React.createClass({
     this.setState({followState: !this.state.followState});
   },
   render(){
-    let buttonText = "Like";
+    let cName = "cheers";
     if (this.state.followState === true){
-      buttonText = "Unlike";
+      cName += " clicked";
     }
     return (
       <div>
-        <button onClick={this.toggle}>{buttonText}</button>
-        &nbsp;{this.state.numLikes}
+        <button className={cName} onClick={this.toggle}>Cheers!</button>
+        <div className="num-cheers">{this.state.numLikes}</div>
       </div>
     );
   }

@@ -1,7 +1,12 @@
 class Api::CheckinsController < ApplicationController
   def index
-    # @checkins = Checkin.with_params(params[:source])
-    @checkins = Checkin.all
+    if params[:loc] == "feed"
+      @checkins = Checkin.all
+    elsif params[:loc] == "profile"
+      @checkins = Checkin.all_profile(params[:id])
+    elsif params[:loc] == "drink"
+      @checkins = Checkin.all_drink(params[:id])
+    end
   end
 
   def create

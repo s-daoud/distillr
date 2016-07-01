@@ -8,15 +8,17 @@ const SessionStore = require('../stores/session_store');
 const DrinkActions = require('../actions/drink_actions');
 const DrinkForm = require('./drink_form');
 
-const CheckinIndex = require('./checkin_index');
-
 const NavBar = React.createClass({
   componentDidMount(){
     DrinkActions.fetchAllDrinks();
   },
   goToFeed(e){
     e.preventDefault();
-    hashHistory.push('index');
+    hashHistory.push("index");
+  },
+  goToProfile(e){
+    e.preventDefault();
+    hashHistory.push(`users/${SessionStore.currentUser().id}`);
   },
   render(){
     return (
@@ -45,7 +47,7 @@ const NavBar = React.createClass({
                     <li onClick={this.goToFeed}>
                       Recent Activity
                     </li>
-                    <li>
+                    <li onClick={this.goToProfile}>
                       My Profile
                     </li>
                     <li>

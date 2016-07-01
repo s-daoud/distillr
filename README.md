@@ -14,19 +14,19 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [ ] Checkins
   - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate CSS styling
 - [ ] Feed
   - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate CSS styling
 - [ ] Friends
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
 - [ ] Profile
-  - [ ] Smooth, bug-free navigation
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate CSS styling
 
 ## Design Docs
 * [View Wireframes][views]
@@ -69,27 +69,30 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [x] setup API and flux loop for checkin cycle
 - [x] make sure checkin form works
 
-### Phase 3: Users and friends (1 day, W1D4)
+### Phase 3: Comments, likes, and profile (1 day, W1D4)
 
-**Objective:** Users have profile pages which display their activity and a page that lists all their friends
+**Objective:** Users have profile pages and can comment on or like checkins.
+
+- [x] setup API/flux loop for like and comment cycles
+- [x] make profile page
+- [x] add feed to drink page
+- [x] add feed to profile page
+- [x] feeds are selective based on page you're on
+- [x] style feed
+- [x] style profile page
+- [x] style drink page
+
+### Phase 4: Friends and styling (1 day, W1D5)
+
+**Objective:** Users can have friends and follow only their feeds on their main page
 
 - [ ] create models: `Friend`
 - [ ] create controllers: `Friends`
-- [ ] setup API/flux for users cycle
+- [ ] setup API/flux for friends cycle
 - [ ] add ability to friend/unfriend users
-- [ ] add user info pane to landing page - tracks total number of drinks, unique drinks, number of friends
-- [ ] add user dropdown to navbar
-- [ ] add feed to drink page
-
-### Phase 4: Comments/likes and styling (1 day, W1D5)
-
-**Objective:** Drinks have their own pages with feed with people who have rated them
-
-- [ ] setup API/flux loop for like and comment cycles
-- [ ] style drink page
-- [ ] style feed
-- [ ] style profile page
+- [ ] main feed only displays friends
 - [ ] style friends page
+- [ ] style checkin form
 - [ ] MVP (hopefully) functional! spend the rest of the day refining styling on all pages so far
 
 ### Phase 5: Venues (1 day, W2D1)
@@ -137,10 +140,11 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 
 ### Bonus Features (TBD)
-- [ ] create drinks/venues
-- [ ] badges
 - [ ] infinite scroll for feeds
 - [ ] top rated drinks on more pages
+- [ ] user info pane with drinks consumed, unique consumed, number of friends
+- [ ] checkin from drink page with drink already filled in
+- [ ] badges
 - [ ] each checkin has it's own page with details about who liked it/all comments
 - [ ] profile pictures
 - [ ] tags with type of alcohol, flavor profile(e.g., sweet, sour, etc)

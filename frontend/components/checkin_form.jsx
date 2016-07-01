@@ -4,11 +4,12 @@ const hashHistory = require('react-router').hashHistory;
 const ErrorStore = require('../stores/error_store');
 const SessionStore = require('../stores/session_store');
 const DrinkStore = require('../stores/drink_store');
-import {RadioGroup, Radio} from 'react-radio-group'
+const CheckinIndex = require('./checkin_index');
+const Rating = require('react-rating');
 
 const CheckinForm = React.createClass({
   getInitialState(){
-    return ({drink: "", drinkList: {}, rating: "",
+    return ({drink: "", drinkList: {}, rating: "", initialRating: 0,
             review: "", focused: false, errors: ErrorStore.formErrors("checkin")});
   },
   componentDidMount(){
@@ -33,7 +34,6 @@ const CheckinForm = React.createClass({
   },
   autoDrink(e){
     e.preventDefault();
-    console.log("hi");
     const drink = {};
     Object.keys(this.allDrinks).forEach( drinkId => {
       if (this.allDrinks[drinkId].name === (e.target.className)) {
@@ -42,8 +42,11 @@ const CheckinForm = React.createClass({
     });
     this.setState({drink: e.target.className, drinkList: drink, focused:false});
   },
-  updateRating(val){
-    this.setState({rating: val})
+  updateRating(rating){
+    this.setState({rating: rating});
+  },
+  updateInitial(rating){
+    this.setState({initialRating: rating});
   },
   updateReview(e){
     e.preventDefault();
@@ -56,7 +59,7 @@ const CheckinForm = React.createClass({
                                   drink_id: parseInt(drinkId),
                                   rating: parseInt(this.state.rating),
                                   review: this.state.review});
-    this.setState({drink: "", rating: "", review: ""});
+    this.setState({drink: "", rating: "", review: "", initialRating: 0});
   },
   focus(e){
     e.preventDefault();
@@ -91,17 +94,14 @@ const CheckinForm = React.createClass({
                  onChange={this.updateDrink} value={this.state.drink} placeholder="Drink" />
           <ul className={className}>{drinkDropdown}</ul>
 
-          <RadioGroup name="rating" onChange={this.updateRating}>
-            <Radio value="1" />1
-            <Radio value="2" />2
-            <Radio value="3" />3
-            <Radio value="4" />4
-            <Radio value="5" />5
-          </RadioGroup>
-
-          <textarea onChange={this.updateReview} placeholder="Review (optional)" rows="2" cols="50"/> <br />
+          <div>
+            <Rating initialRate={this.state.initialRating} onChange={this.updateRating} onClick={this.updateInitial}/>
+          </div>
+          
+          <textarea onChange={this.updateReview} placeholder="Review (optional)" rows="2" cols="30"/> <br />
           <input type="submit" value="Check in!"/>
         </form>
+        <CheckinIndex source={{loc: "feed"}}/>
       </div>
     );
   }

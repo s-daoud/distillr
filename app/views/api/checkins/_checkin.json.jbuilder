@@ -2,6 +2,7 @@ json.id checkin.id
 json.username checkin.user.username
 json.userId checkin.user.id
 json.drink checkin.drink.name
+json.drinkImg checkin.drink.image_url
 json.rating checkin.rating
 json.review checkin.review
 json.drinkId checkin.drink.id

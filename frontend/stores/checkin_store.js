@@ -8,8 +8,8 @@ let _checkins = {};
 const CheckinStore = new Store(dispatcher);
 
 CheckinStore.all = function(){
-  return Object.keys(_checkins).map(checkin => {
-  	return _checkins[checkin];
+  return Object.keys(_checkins).map(id => {
+  	return _checkins[id];
   });
 };
 
@@ -50,8 +50,3 @@ CheckinStore.__onDispatch = function(payload){
 };
 
 module.exports = CheckinStore;
-
-
-// all friends
-// all drinks
-// all me

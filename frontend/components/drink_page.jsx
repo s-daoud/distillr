@@ -2,6 +2,7 @@ const React = require('react');
 
 const DrinkStore = require('../stores/drink_store');
 const DrinkActions = require('../actions/drink_actions');
+const CheckinIndex = require('./checkin_index');
 
 const DrinkPage = React.createClass({
   getInitialState(){
@@ -23,9 +24,12 @@ const DrinkPage = React.createClass({
   render(){
     return(
       <div>
-        {this.state.drink.name} <br />
-        {this.state.drink.description} <br />
+        <div className="drink-profile clearfix">
         <img className="drink-img" src={this.state.drink.image_url} />
+          <h3>{this.state.drink.name}</h3>
+          <p>{this.state.drink.description}</p>
+        </div>
+        <CheckinIndex source={{loc: "drink", id: this.props.params.drinkId}}/>
       </div>
     );
   }

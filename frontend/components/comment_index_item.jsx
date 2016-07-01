@@ -1,6 +1,6 @@
 const React = require('react');
+const Link = require('react-router').Link;
 
-const CheckinStore = require('../stores/checkin_store');
 const SessionStore = require('../stores/session_store');
 const CommentActions = require('../actions/comment_actions');
 
@@ -16,10 +16,12 @@ const CommentIndexItem = React.createClass({
       deleteButton = <button onClick={this.deleteComment}>Delete</button>;
     }
     return (
-      <div>
-        {this.props.comment.username}:&nbsp;
-        {this.props.comment.comment}&nbsp;
-        {deleteButton}
+      <div className="comment-item">
+        <p>
+          <Link to={`users/${this.props.comment.userId}`}>{this.props.comment.username}</Link>:&nbsp;
+          {this.props.comment.comment}
+        </p>
+        <p className="delete">{deleteButton}</p>
       </div>
     );
   }

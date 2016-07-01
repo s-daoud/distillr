@@ -7,6 +7,7 @@
   width: 161px;
   position: absolute;
   top: 82px;
+  z-index: 1;
 }
 
 .drink-dropdown li{
@@ -21,4 +22,151 @@
 
 #checkin{
   position: relative;
+  width: 300px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.feed{
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 50px;
+}
+
+.feed a{
+  color: #cc6600;
+}
+
+.feed a:hover{
+  color: #ff9933;
+}
+
+.feed h3{
+  position: absolute;
+  top: -40px;
+}
+
+.checkin-item{
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.drink-img-small{
+  width: 100px;
+  height: 100%;
+  float: right;
+  margin: 5px;
+}
+
+.checkin-info{
+  margin: 0 auto;
+  width: 70%;
+  padding: 20px;
+}
+
+h4{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkin-content{
+  background-color: #fff;
+  border: 1px solid #eee;
+  margin: 10px 10px 10px 0;
+  padding: 10px;
+  max-width: 350px;
+}
+
+.cheers{
+  color: #fff;
+  height: 40px;
+  width: 100px;
+  background-color: #a7a7a7;
+  border-radius: 4px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+}
+
+.cheers:hover{
+  background-color: #868787;
+}
+
+.clicked{
+  background-color: #333;
+}
+
+.num-cheers{
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  text-align: center;
+  width: 50px;
+  height: 36px;
+  margin: 0 220px;
+  font-size: 24px;
+  padding-top: 4px;
+}
+
+#post{
+  float: right;
+  height: 30px;
+}
+
+.slide{
+  max-height: 0;
+  overflow-y: hidden;
+  max-width: 400px;
+  transition: max-height 1s ease-in-out;
+  margin: 8px 8px 8px 0;
+}
+
+.comment{
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+.comment textarea{
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 90%;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.2);
+}
+
+.open{
+  max-height: 150px;
+  transition: max-height 1s ease-in-out;
+}
+
+.delete{
+  color: #cc6600;
+}
+
+.delete:hover{
+  color: #ff9933;
+}
+
+.comment-item{
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+  min-height: 30px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-item p{
+  margin-top: 5px;
+}
+
+.comment-item:last-of-type{
+  border-bottom: 1px solid #eee;
 }

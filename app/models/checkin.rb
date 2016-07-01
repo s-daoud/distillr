@@ -6,10 +6,11 @@ class Checkin < ActiveRecord::Base
   has_many :comments
   has_many :likes
 
-  # def self.with_params(source)
-  #   if source.loc == "drink"
-  #     Checkin.where("drink_id: ?", source.id)
-  #   elsif source.loc == "feed"
-  #     Checkin.joins(:friends).where(user_id: users.f)
-  # end
+  def self.all_profile(id)
+    Checkin.where("user_id = ?", id)
+  end
+
+  def self.all_drink(id)
+    Checkin.where("drink_id = ?", id)
+  end
 end

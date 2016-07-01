@@ -16,7 +16,8 @@ const SessionActions = require('./actions/session_actions');
 const SplashPage = require('./components/splash_page');
 const NavBar = require('./components/nav_bar');
 const DrinkPage = require('./components/drink_page');
-const CheckinIndex = require('./components/checkin_index');
+const CheckinForm = require('./components/checkin_form');
+const ProfilePage = require('./components/profile_page');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
@@ -51,10 +52,11 @@ const routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={SplashPage} onEnter={requireAnonymous}/>
-      <Route component={CheckinIndex} path="index" onEnter={_ensureLoggedIn}/>
-      <Route component={DrinkPage} path="drinks/:drinkId" />
-      <Route component={LoginForm} path="login" />
       <Route component={SignupForm} path="signup" />
+      <Route component={LoginForm} path="login" />
+      <Route component={CheckinForm} path="index" onEnter={_ensureLoggedIn}/>
+      <Route component={ProfilePage} path="users/:userId" />
+      <Route component={DrinkPage} path="drinks/:drinkId" />
     </Route>
   </Router>
 );
