@@ -26,7 +26,7 @@ const CheckinIndexItem = React.createClass({
           <p>{deleteButton}</p></h4>
           <img className="drink-img-small" src={this.props.checkin.drinkImg} />
           <div className="checkin-content">
-            {this.props.checkin.review} <br />
+            <p>{this.props.checkin.review}</p>
 
             <Rating placeholderRate={this.props.checkin.rating}
                     empty="fa fa-glass grey fa-2x" placeholder="fa fa-glass red-gold fa-2x"
