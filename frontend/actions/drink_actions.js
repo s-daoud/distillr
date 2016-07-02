@@ -11,7 +11,7 @@ const DrinkActions = {
     DrinkApiUtil.fetchSingleDrink(id, DrinkActions.receiveSingleDrink);
   },
   createDrink(data){
-    DrinkApiUtil.createDrink(data, DrinkActions.receiveSingleDrink, ErrorActions.setErrors);
+    DrinkApiUtil.createDrink("drink", data, DrinkActions.receiveSingleDrink, ErrorActions.setErrors);
   },
   receiveAllDrinks(drinks){
     dispatcher.dispatch({

@@ -9,7 +9,7 @@ class Api::DrinksController < ApplicationController
     if @drink.save
       render json: @drink
     else
-      render json: {base: @drink.errors.full_messages}, status: 401
+      render json: {base: @drink.errors.full_messages}, status: 400
     end
   end
 

@@ -1,14 +1,11 @@
 module.exports = {
-  createLike(data, success, error){
+  createLike(data, success){
     $.ajax({
       url: `api/checkins/${data.checkin_id}/likes`,
       method: "POST",
       data: {like: data},
       success(resp){
         success(resp);
-      },
-      error(resp){
-        error(resp);
       }
     });
   },

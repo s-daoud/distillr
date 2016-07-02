@@ -8,7 +8,7 @@ module.exports = {
       }
     });
   },
-  createCheckin(data, success, error){
+  createCheckin(form, data, success, error){
     $.ajax({
       url: "api/checkins",
       method: "POST",
@@ -17,7 +17,7 @@ module.exports = {
         success(resp);
       },
       error(resp){
-        error(resp);
+        error(form, resp);
       }
     });
   },

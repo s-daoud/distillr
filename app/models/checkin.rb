@@ -13,4 +13,14 @@ class Checkin < ActiveRecord::Base
   def self.all_drink(id)
     Checkin.where("drink_id = ?", id)
   end
+
+  def self.all_friends(id)
+    user = User.find(id)
+    reqs = user.friend_requests.where(status: "accepted")
+    friends = [id]
+    reqs.each do |req|
+      friends << req.friend_id
+    end
+    Checkin.where("user_id IN (?)", friends)
+  end
 end

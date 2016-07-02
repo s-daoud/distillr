@@ -5,7 +5,7 @@ const ErrorActions = require('./error_actions');
 
 const LikeActions = {
   createLike(data){
-    LikeApiUtil.createLike(data, LikeActions.receiveSingleLike, ErrorActions.setErrors);
+    LikeApiUtil.createLike(data, LikeActions.receiveSingleLike);
   },
   destroyLike(checkinId, id){
     LikeApiUtil.removeLike(checkinId, id, LikeActions.removeLike);

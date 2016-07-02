@@ -18,6 +18,7 @@ const NavBar = require('./components/nav_bar');
 const DrinkPage = require('./components/drink_page');
 const CheckinForm = require('./components/checkin_form');
 const ProfilePage = require('./components/profile_page');
+const FriendIndex = require('./components/friend_index');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
@@ -57,6 +58,7 @@ const routes = (
       <Route component={CheckinForm} path="index" onEnter={_ensureLoggedIn}/>
       <Route component={ProfilePage} path="users/:userId" />
       <Route component={DrinkPage} path="drinks/:drinkId" />
+      <Route component={FriendIndex} path="friends" />
     </Route>
   </Router>
 );

@@ -9,6 +9,7 @@ const DrinkPage = React.createClass({
     return {drink: {}};
   },
   componentDidMount(){
+    window.scrollTo(0,0);
     this.drinkListener = DrinkStore.addListener(this._onChange);
   },
   componentWillUnmount(){

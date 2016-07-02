@@ -2,6 +2,7 @@ const React = require('react');
 const DrinkActions = require('../actions/drink_actions');
 const hashHistory = require('react-router').hashHistory;
 const ErrorStore = require('../stores/error_store');
+const ErrorActions = require('../actions/error_actions');
 
 const DrinkForm = React.createClass({
   getInitialState(){
@@ -32,6 +33,11 @@ const DrinkForm = React.createClass({
     e.preventDefault();
     DrinkActions.createDrink({name: this.state.name, description: this.state.description, image_url: this.state.image_url});
     this.setState({name: "", description: "", image_url: ""});
+    if (this.state.errors) {
+      this.state.errors.forEach (error => {
+        ErrorActions.clearErrors(error);
+      });
+    }
   },
   render(){
     let errors = "";
@@ -42,9 +48,9 @@ const DrinkForm = React.createClass({
     }
 
     return (
-      <div>
+      <div className="add-form">
         {errors}
-        <form onSubmit={this.handleSubmit} className="add-form">
+        <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.updateName} placeholder="Name"/> <br />
           <input type="text" onChange={this.updateImage} placeholder="Image URL"/> <br />
           <textarea onChange={this.updateDescription} placeholder="Description" rows="5" cols="50"/> <br />

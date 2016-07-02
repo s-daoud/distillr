@@ -1,6 +1,7 @@
 const React = require('react');
 const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
+const Modal = require('react-modal');
 
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
@@ -9,6 +10,9 @@ const DrinkActions = require('../actions/drink_actions');
 const DrinkForm = require('./drink_form');
 
 const NavBar = React.createClass({
+  getInitialState(){
+    return {modalOpen: false};
+  },
   componentDidMount(){
     DrinkActions.fetchAllDrinks();
   },
@@ -20,6 +24,16 @@ const NavBar = React.createClass({
     e.preventDefault();
     hashHistory.push(`users/${SessionStore.currentUser().id}`);
   },
+  goToFriends(e){
+    e.preventDefault();
+    hashHistory.push("friends");
+  },
+  closeModal(){
+    this.setState({modalOpen: false});
+  },
+  openModal(){
+    this.setState({modalOpen: true});
+  },
   render(){
     return (
       <div>
@@ -30,13 +44,13 @@ const NavBar = React.createClass({
                 <Link to="index">Distillr</Link>
               </li>
               <ul className="header-list">
-                  <li className="dropdown">
+                  <li className="clickable" onClick={this.openModal}>
                     Add Drink
-                    <ul className="dropdown-list drink-form">
-                      <li>
-                        <DrinkForm className="drink-form-element"/>
-                      </li>
-                    </ul>
+                    <Modal isOpen={this.state.modalOpen}
+                           onRequestClose={this.closeModal}
+                           className="modal">
+                      <DrinkForm />
+                    </Modal>
                   </li>
               </ul>
             </ul>
@@ -50,7 +64,7 @@ const NavBar = React.createClass({
                     <li onClick={this.goToProfile}>
                       My Profile
                     </li>
-                    <li>
+                    <li onClick={this.goToFriends}>
                       Friends
                     </li>
                     <li onClick={SessionActions.logout}>

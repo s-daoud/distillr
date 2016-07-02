@@ -5,7 +5,7 @@ const ErrorActions = require('./error_actions');
 
 const CommentActions = {
   createComment(data){
-    CommentApiUtil.createComment(data, CommentActions.receiveSingleComment, ErrorActions.setErrors);
+    CommentApiUtil.createComment(data, CommentActions.receiveSingleComment);
   },
   destroyComment(checkinId, id){
     CommentApiUtil.removeComment(checkinId, id, CommentActions.removeComment);

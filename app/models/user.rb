@@ -12,6 +12,15 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :likes
 
+  has_many :friend_requests,
+   primary_key: :id,
+   foreign_key: :user_id,
+   class_name: "Friend"
+
+  has_many :friends,
+   through: :friend_requests,
+   source: :friend
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     return nil if user.nil?

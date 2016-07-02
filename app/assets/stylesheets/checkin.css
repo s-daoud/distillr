@@ -6,7 +6,7 @@
   border-right: 1px solid #eee;
   width: 161px;
   position: absolute;
-  top: 82px;
+  top: 62px;
   z-index: 1;
 }
 
@@ -18,13 +18,6 @@
 .focus{
   display: block;
   position: absolute;
-}
-
-#checkin{
-  position: relative;
-  width: 300px;
-  margin: 0 auto;
-  padding: 0;
 }
 
 .feed{
@@ -53,6 +46,35 @@
   margin: 5px;
   padding: 5px;
   background-color: #fff;
+}
+
+.checkin-form{
+  max-width: 738px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #fff;
+  border: 1px solid black;
+  position: relative;
+}
+
+#checkin-button{
+  background-color: #ffcc00;
+  height: 30px;
+}
+
+#checkin-button:hover{
+  background-color: #ff9933;
+}
+
+#checkin{
+  width: 250px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+
+#checkin-drink{
+  margin-top: 30px;
 }
 
 .drink-img-small{

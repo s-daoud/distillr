@@ -1,14 +1,11 @@
 module.exports = {
-  createComment(data, success, error){
+  createComment(data, success){
     $.ajax({
       url: `api/checkins/${data.checkin_id}/comments`,
       method: "POST",
       data: {comment: data},
       success(resp){
         success(resp);
-      },
-      error(resp){
-        error(resp);
       }
     });
   },

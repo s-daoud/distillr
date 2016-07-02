@@ -15,7 +15,7 @@ module.exports = {
       }
     });
   },
-  createDrink(data, success, error){
+  createDrink(form, data, success, error){
     $.ajax({
       url: "api/drinks",
       method: "POST",
@@ -24,7 +24,7 @@ module.exports = {
         success(resp);
       },
       error(resp){
-        error(resp);
+        error(form, resp);
       }
     });
   },

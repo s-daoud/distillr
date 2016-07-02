@@ -16,3 +16,30 @@
   top: 200px;
   left: 20px;
 }
+
+.friend-button{
+  border: 1px solid black;
+  background-color: #eee;
+  color: #000;
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  padding: 5px;
+  position: absolute;
+  top: 225px;
+  left: 600px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 15px;
+}
+
+.friend-button:hover{
+  background-color: #ccc;
+}
+
+#pending{
+  background-color: #666;
+  cursor: default;
+  opacity: 0.7;
+}

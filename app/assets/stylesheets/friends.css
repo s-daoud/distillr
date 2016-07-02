@@ -1,0 +1,26 @@
+.friend-box{
+  border: 1px solid black;
+  background-color: #fff;
+  padding: 5px;
+}
+
+.main-flex{
+  display: flex;
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.friend-flex{
+  flex: 1;
+}
+
+.checkin-flex{
+  flex: 2;
+  margin-right: 10px;
+}
+
+.friend-index-flex{
+  flex: 2;
+  margin-right: 10px;
+}

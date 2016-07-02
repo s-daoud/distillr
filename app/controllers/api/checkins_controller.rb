@@ -1,7 +1,7 @@
 class Api::CheckinsController < ApplicationController
   def index
     if params[:loc] == "feed"
-      @checkins = Checkin.all
+      @checkins = Checkin.all_friends(params[:id])
     elsif params[:loc] == "profile"
       @checkins = Checkin.all_profile(params[:id])
     elsif params[:loc] == "drink"
@@ -15,7 +15,7 @@ class Api::CheckinsController < ApplicationController
     if @checkin.save
       render :show
     else
-      render json: {base: @checkin.errors.full_messages}, status: 401
+      render json: {base: @checkin.errors.full_messages}, status: 400
     end
   end
 

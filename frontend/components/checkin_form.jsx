@@ -7,6 +7,8 @@ const DrinkStore = require('../stores/drink_store');
 const CheckinIndex = require('./checkin_index');
 const Rating = require('react-rating');
 
+const FriendRequestIndex = require('./friend_request_index');
+
 const CheckinForm = React.createClass({
   getInitialState(){
     return ({drink: "", drinkList: {}, rating: "", initialRating: 0,
@@ -92,20 +94,31 @@ const CheckinForm = React.createClass({
 
     return (
       <div>
-        {errors}
-        <form onSubmit={this.handleSubmit} className="form" id="checkin">
-          <input type="text" onFocus={this.focus} onBlur={this.blur}
-                 onChange={this.updateDrink} value={this.state.drink} placeholder="Drink" />
-          <ul onMouseOver={this.focus} className={className}>{drinkDropdown}</ul>
+        <div className="checkin-form">
+          {errors}
+          <form onSubmit={this.handleSubmit} className="form" id="checkin">
+            <input type="text" onFocus={this.focus} onBlur={this.blur}
+                   onChange={this.updateDrink} value={this.state.drink}
+                   placeholder="Drink" id="checkin-drink"/>
+            <ul onMouseOver={this.focus} className={className}>{drinkDropdown}</ul>
 
-          <div>
-            <Rating initialRate={this.state.initialRating} onChange={this.updateRating} onClick={this.updateInitial}/>
+            <div>
+              <Rating initialRate={this.state.initialRating} onChange={this.updateRating} onClick={this.updateInitial}/>
+            </div>
+
+            <textarea onChange={this.updateReview} value={this.state.review}
+                      placeholder="Review (optional)" rows="2" cols="30"/> <br />
+            <input type="submit" value="Check in!" id="checkin-button"/>
+          </form>
+        </div>
+        <div className="main-flex">
+          <div className="checkin-flex">
+            <CheckinIndex source={{loc: "feed", id: SessionStore.currentUser().id}}/>
           </div>
-
-          <textarea onChange={this.updateReview} placeholder="Review (optional)" rows="2" cols="30"/> <br />
-          <input type="submit" value="Check in!"/>
-        </form>
-        <CheckinIndex source={{loc: "feed"}}/>
+          <div className="friend-flex">
+            <FriendRequestIndex />
+          </div>
+        </div>
       </div>
     );
   }

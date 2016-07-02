@@ -3,6 +3,7 @@ const SessionActions = require('../actions/session_actions');
 const hashHistory = require('react-router').hashHistory;
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
+const ErrorActions = require('../actions/error_actions');
 
 const LoginForm = React.createClass({
   getInitialState(){
@@ -35,6 +36,11 @@ const LoginForm = React.createClass({
   handleSubmit(e){
     e.preventDefault();
     SessionActions.login({username: this.state.username, password: this.state.password});
+    if (this.state.errors) {
+      this.state.errors.forEach (error => {
+        ErrorActions.clearErrors(error);
+      });
+    }
   },
   render(){
     let errors = "";

@@ -8,7 +8,7 @@ const CheckinActions = {
     CheckinApiUtil.fetchAllCheckins(source, CheckinActions.receiveAllCheckins);
   },
   createCheckin(data){
-    CheckinApiUtil.createCheckin(data, CheckinActions.receiveSingleCheckin, ErrorActions.setErrors);
+    CheckinApiUtil.createCheckin("checkin", data, CheckinActions.receiveSingleCheckin, ErrorActions.setErrors);
   },
   destroyCheckin(id){
     CheckinApiUtil.removeCheckin(id, CheckinActions.removeCheckin);
