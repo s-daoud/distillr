@@ -6,7 +6,7 @@
 
 .main-flex{
   display: flex;
-  max-width: 750px;
+  max-width: 1048px;
   width: 100%;
   margin: 0 auto;
 }
@@ -23,4 +23,38 @@
 .friend-index-flex{
   flex: 2;
   margin-right: 10px;
+}
+
+.button-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-large{
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.fa-square{
+  color: #ff9494;
+}
+
+.fa-square:hover{
+  color: #A83E3E;
+}
+
+.green{
+  color: #a4d273;
+}
+
+.green:hover{
+  color: #69AB22;
+}
+
+.fa-check{
+  color: #fff;
+}
+
+.fa-times{
+  color: #fff;
 }

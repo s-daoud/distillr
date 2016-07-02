@@ -28,7 +28,9 @@ const CheckinIndexItem = React.createClass({
           <div className="checkin-content">
             {this.props.checkin.review} <br />
 
-            <Rating placeholderRate={this.props.checkin.rating} readonly={true}/>
+            <Rating placeholderRate={this.props.checkin.rating}
+                    empty="fa fa-glass grey fa-2x" placeholder="fa fa-glass red-gold fa-2x"
+                    readonly={true}/>
 
           </div>
           <CommentIndex checkin={this.props.checkin}/>

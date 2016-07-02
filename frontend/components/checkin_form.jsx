@@ -103,7 +103,9 @@ const CheckinForm = React.createClass({
             <ul onMouseOver={this.focus} className={className}>{drinkDropdown}</ul>
 
             <div>
-              <Rating initialRate={this.state.initialRating} onChange={this.updateRating} onClick={this.updateInitial}/>
+              <Rating initialRate={this.state.initialRating}
+                      empty="fa fa-glass grey fa-2x" full="fa fa-glass gold fa-2x"
+                      onChange={this.updateRating} onClick={this.updateInitial}/>
             </div>
 
             <textarea onChange={this.updateReview} value={this.state.review}

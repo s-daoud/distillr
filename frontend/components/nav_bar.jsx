@@ -40,8 +40,8 @@ const NavBar = React.createClass({
         <header>
           <div className="navbar">
             <ul className="left-header">
-              <li className="logo">
-                <Link to="index">Distillr</Link>
+              <li className="logo" onClick={this.goToFeed}>
+                
               </li>
               <ul className="header-list">
                   <li className="clickable" onClick={this.openModal}>

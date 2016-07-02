@@ -47,7 +47,9 @@ const CommentIndex = React.createClass({
     return (
       <div>
         <div>
-          <button className="cheers" onClick={this.toggleComment}>Comment</button>
+          <button className="cheers" onClick={this.toggleComment}>
+            <i className="fa fa-comment-o"></i>&nbsp;Comment
+          </button>
           <CheckinLike checkin={this.props.checkin}/>
         </div>
 

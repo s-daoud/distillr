@@ -44,8 +44,13 @@ const FriendIndexItem = React.createClass({
 
     return (
       <div className="comment-item">
-        <p><Link to={`users/${this.state.user.id}`}>{this.state.user.username}</Link></p>
-        <button onClick={this.rejectFriend}>Remove</button>
+        <p className="name-large"><Link to={`users/${this.state.user.id}`}>{this.state.user.username}</Link></p>
+        <button onClick={this.rejectFriend}>
+          <span className="fa-stack fa-lg">
+            <i className="fa fa-square fa-stack-2x"></i>
+            <i className="fa fa-times fa-stack-1x"></i>
+          </span>
+        </button>
       </div>
     );
   }

@@ -200,3 +200,15 @@ h4{
 .comment-item:last-of-type{
   border-bottom: 1px solid #eee;
 }
+
+.gold{
+  color: #ffcc00;
+}
+
+.grey{
+  color: #ccc;
+}
+
+.red-gold{
+  color: #ff9933;
+}

@@ -44,7 +44,7 @@ const SplashPage = React.createClass({
       <div className="container">
         <div className="main">
           <div className="splash-nav">
-            <h1>Distillr</h1>
+            <div className="splash-logo"></div>
             <div className="buttons">
               <button className="padded-button"
                       onClick={this.login}>Log in</button><br />
@@ -74,5 +74,5 @@ const SplashPage = React.createClass({
     );
   }
 });
- 
+
 module.exports = SplashPage;

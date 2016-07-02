@@ -45,16 +45,28 @@ const FriendRequestItem = React.createClass({
         });
 
         user = <p><Link to={`users/${this.state.user.id}`}>{this.state.user.username}</Link></p>;
-        acceptButton = <button onClick={this.acceptFriend}>Accept</button>;
-        rejectButton = <button onClick={this.rejectFriend}>Reject</button>;
+        acceptButton = <button onClick={this.acceptFriend}>
+        <span className="fa-stack fa-lg">
+          <i className="fa fa-square green fa-stack-2x"></i>
+          <i className="fa fa-check fa-stack-1x"></i>
+        </span>
+        </button>;
+        rejectButton = <button onClick={this.rejectFriend}>
+          <span className="fa-stack fa-lg">
+            <i className="fa fa-square fa-stack-2x"></i>
+            <i className="fa fa-times fa-stack-1x"></i>
+          </span>
+        </button>;
       }
     }
 
     return (
-      <div className="comment-item">
-        {user}
-        {acceptButton}
-        {rejectButton}
+      <div className="comment-item button-flex">
+        <div>{user}</div>
+        <div>
+          {acceptButton}
+          {rejectButton}
+        </div>
       </div>
     );
   }

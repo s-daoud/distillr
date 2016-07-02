@@ -25,6 +25,10 @@ input[type="text"]:first-child{
   margin-top: 50px;
 }
 
+input:focus{
+  outline: none;
+}
+
 #content{
   height: 100%;
 }
@@ -38,6 +42,17 @@ input[type="text"]:first-child{
 
 .app-container{
   height: 100%;
+}
+
+.splash-logo{
+  width: 400px;
+  height: 200px;
+  background-image: url(/assets/distillr-logo-big.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -162px;
+  left: -48px;
 }
 
 .form{
@@ -60,7 +75,7 @@ input[type="text"]:first-child{
 
 .splash-nav{
   position: relative;
-  top: 215px;
+  top: 350px;
   left: 300px;
   width: 205px;
 }

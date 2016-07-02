@@ -22,6 +22,11 @@ header{
 
 .logo{
   padding: 10px 20px;
+  width: 120px;
+  height: 50px;
+  background-image: url(/assets/distillr-logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header-list{
