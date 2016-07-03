@@ -27,6 +27,7 @@ header{
   background-image: url(/assets/distillr-logo.png);
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
 
 .header-list{
