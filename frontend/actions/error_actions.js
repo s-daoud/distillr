@@ -1,6 +1,5 @@
 const dispatcher = require('../dispatcher/dispatcher');
 const ErrorConstants = require('../constants/error_constants');
-const SessionApiUtil = require('../util/session_api_util');
 
 const ErrorActions = {
   setErrors(form, error){

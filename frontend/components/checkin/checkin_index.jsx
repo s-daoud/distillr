@@ -1,7 +1,9 @@
 const React = require('react');
-const CheckinStore = require('../stores/checkin_store');
+
+const CheckinStore = require('../../stores/checkin_store');
+const CheckinActions = require('../../actions/checkin_actions');
+
 const CheckinIndexItem = require('./checkin_index_item');
-const CheckinActions = require('../actions/checkin_actions');
 
 const CheckinIndex = React.createClass({
   getInitialState(){

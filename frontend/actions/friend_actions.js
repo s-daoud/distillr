@@ -1,7 +1,6 @@
 const dispatcher = require('../dispatcher/dispatcher');
 const UserConstants = require('../constants/user_constants');
 const FriendApiUtil = require('../util/friend_api_util');
-const ErrorActions = require('./error_actions');
 
 const FriendActions = {
   fetchAllFriends(userId){

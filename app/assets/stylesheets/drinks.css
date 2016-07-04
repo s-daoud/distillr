@@ -1,4 +1,5 @@
 .drink-img{
+  max-height: 250px;
   height: 100%;
   width: auto;
   float: left;

@@ -1,7 +1,6 @@
 const Store = require('flux/utils').Store;
 const dispatcher = require('../dispatcher/dispatcher');
 const CheckinConstants = require('../constants/checkin_constants');
-const hashHistory = require('react-router').hashHistory;
 
 let _checkins = {};
 

@@ -1,24 +1,30 @@
 const React = require('react');
-const SessionActions = require('../actions/session_actions');
 const hashHistory = require('react-router').hashHistory;
-const SessionStore = require('../stores/session_store');
-const ErrorStore = require('../stores/error_store');
-const ErrorActions = require('../actions/error_actions');
 
-const SignupForm = React.createClass({
+const SessionStore = require('../../stores/session_store');
+const ErrorStore = require('../../stores/error_store');
+const SessionActions = require('../../actions/session_actions');
+const ErrorActions = require('../../actions/error_actions');
+
+const LoginForm = React.createClass({
   getInitialState(){
-    return ({username: "", password: "", errors: ErrorStore.formErrors("signup")});
+    return ({username: "", password: "", errors: ErrorStore.formErrors("login")});
   },
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.trackErrors);
     this.sessionListener = SessionStore.addListener(this.checkLogin);
+    if (this.state.errors) {
+      this.state.errors.forEach (error => {
+        ErrorActions.clearErrors(error);
+      });
+    }
   },
   componentWillUnmount(){
     this.errorListener.remove();
     this.sessionListener.remove();
   },
   trackErrors(){
-    this.setState({errors: ErrorStore.formErrors("signup")});
+    this.setState({errors: ErrorStore.formErrors("login")});
   },
   checkLogin(){
     if(SessionStore.isUserLoggedIn){
@@ -35,12 +41,7 @@ const SignupForm = React.createClass({
   },
   handleSubmit(e){
     e.preventDefault();
-    SessionActions.signup({username: this.state.username, password: this.state.password});
-    if (this.state.errors) {
-      this.state.errors.forEach (error => {
-        ErrorActions.clearErrors(error);
-      });
-    }
+    SessionActions.login({username: this.state.username, password: this.state.password});
   },
   render(){
     let errors = "";
@@ -56,11 +57,11 @@ const SignupForm = React.createClass({
         <form onSubmit={this.handleSubmit} className="form">
           <input type="text" onChange={this.updateName} placeholder="Username"/> <br />
           <input type="password" onChange={this.updatePassword} placeholder="Password"/> <br />
-          <input type="submit" value="Sign up" className="entry"/>
+          <input type="submit" value="Log In" className="entry"/>
         </form>
       </div>
     );
   }
 });
 
-module.exports = SignupForm;
+module.exports = LoginForm;

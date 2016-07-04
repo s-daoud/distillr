@@ -1,13 +1,12 @@
 const React = require('react');
-const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
 const Modal = require('react-modal');
 
+const DrinkActions = require('../actions/drink_actions');
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 
-const DrinkActions = require('../actions/drink_actions');
-const DrinkForm = require('./drink_form');
+const DrinkForm = require('./drink/drink_form');
 
 const NavBar = React.createClass({
   getInitialState(){
@@ -41,7 +40,7 @@ const NavBar = React.createClass({
           <div className="navbar">
             <ul className="left-header">
               <li className="logo" onClick={this.goToFeed}>
-                
+
               </li>
               <ul className="header-list">
                   <li className="clickable" onClick={this.openModal}>

@@ -1,10 +1,11 @@
 const React = require('react');
 const Link = require('react-router').Link;
 
-const UserStore = require('../stores/user_store');
-const SessionStore = require('../stores/session_store');
-const UserActions = require('../actions/user_actions');
-const FriendActions = require('../actions/friend_actions');
+const UserStore = require('../../stores/user_store');
+const SessionStore = require('../../stores/session_store');
+const UserActions = require('../../actions/user_actions');
+const FriendActions = require('../../actions/friend_actions');
+
 const FriendRequestIndex = require('./friend_request_index');
 
 const FriendIndexItem = React.createClass({
@@ -46,7 +47,7 @@ const FriendIndexItem = React.createClass({
       <div className="comment-item">
         <p className="name-large"><Link to={`users/${this.state.user.id}`}>{this.state.user.username}</Link></p>
         <button onClick={this.rejectFriend}>
-          <span className="fa-stack fa-lg">
+          <span className="fa-stack fa-lg red-hover">
             <i className="fa fa-square fa-stack-2x"></i>
             <i className="fa fa-times fa-stack-1x"></i>
           </span>

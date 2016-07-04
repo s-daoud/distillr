@@ -1,8 +1,9 @@
 const React = require('react');
 
-const DrinkStore = require('../stores/drink_store');
-const DrinkActions = require('../actions/drink_actions');
-const CheckinIndex = require('./checkin_index');
+const DrinkStore = require('../../stores/drink_store');
+const DrinkActions = require('../../actions/drink_actions');
+
+const CheckinIndex = require('../checkin/checkin_index');
 
 const DrinkPage = React.createClass({
   getInitialState(){

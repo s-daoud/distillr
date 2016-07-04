@@ -1,8 +1,9 @@
 const React = require('react');
-const DrinkActions = require('../actions/drink_actions');
 const hashHistory = require('react-router').hashHistory;
-const ErrorStore = require('../stores/error_store');
-const ErrorActions = require('../actions/error_actions');
+
+const ErrorStore = require('../../stores/error_store');
+const ErrorActions = require('../../actions/error_actions');
+const DrinkActions = require('../../actions/drink_actions');
 
 const DrinkForm = React.createClass({
   getInitialState(){
@@ -10,6 +11,11 @@ const DrinkForm = React.createClass({
   },
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.trackErrors);
+    if (this.state.errors) {
+      this.state.errors.forEach (error => {
+        ErrorActions.clearErrors(error);
+      });
+    }
   },
   componentWillUnmount(){
     this.errorListener.remove();
@@ -33,11 +39,6 @@ const DrinkForm = React.createClass({
     e.preventDefault();
     DrinkActions.createDrink({name: this.state.name, description: this.state.description, image_url: this.state.image_url});
     this.setState({name: "", description: "", image_url: ""});
-    if (this.state.errors) {
-      this.state.errors.forEach (error => {
-        ErrorActions.clearErrors(error);
-      });
-    }
   },
   render(){
     let errors = "";

@@ -1,7 +1,6 @@
 const dispatcher = require('../dispatcher/dispatcher');
 const CheckinConstants = require('../constants/checkin_constants');
 const LikeApiUtil = require('../util/like_api_util');
-const ErrorActions = require('./error_actions');
 
 const LikeActions = {
   createLike(data){

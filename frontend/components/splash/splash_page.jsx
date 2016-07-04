@@ -1,10 +1,11 @@
 const React = require('react');
-const SessionStore = require('../stores/session_store');
-const SessionActions = require('../actions/session_actions');
 const Modal = require('react-modal');
 
-const LoginForm = require('../components/login_form');
-const SignupForm = require('../components/signup_form');
+const SessionStore = require('../../stores/session_store');
+const SessionActions = require('../../actions/session_actions');
+
+const LoginForm = require('./login_form');
+const SignupForm = require('./signup_form');
 
 const SplashPage = React.createClass({
   getInitialState(){

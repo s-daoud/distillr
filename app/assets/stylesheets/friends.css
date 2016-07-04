@@ -39,7 +39,7 @@
   color: #ff9494;
 }
 
-.fa-square:hover{
+.red-hover:hover .fa-square{
   color: #A83E3E;
 }
 
@@ -47,7 +47,7 @@
   color: #a4d273;
 }
 
-.green:hover{
+.green-hover:hover .green{
   color: #69AB22;
 }
 

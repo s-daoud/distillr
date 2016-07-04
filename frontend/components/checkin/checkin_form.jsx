@@ -1,13 +1,14 @@
 const React = require('react');
-const CheckinActions = require('../actions/checkin_actions');
 const hashHistory = require('react-router').hashHistory;
-const ErrorStore = require('../stores/error_store');
-const SessionStore = require('../stores/session_store');
-const DrinkStore = require('../stores/drink_store');
-const CheckinIndex = require('./checkin_index');
 const Rating = require('react-rating');
 
-const FriendRequestIndex = require('./friend_request_index');
+const ErrorStore = require('../../stores/error_store');
+const SessionStore = require('../../stores/session_store');
+const DrinkStore = require('../../stores/drink_store');
+const CheckinActions = require('../../actions/checkin_actions');
+
+const CheckinIndex = require('./checkin_index');
+const FriendRequestIndex = require('../user/friend_request_index');
 
 const CheckinForm = React.createClass({
   getInitialState(){

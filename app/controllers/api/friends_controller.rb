@@ -19,7 +19,7 @@ class Api::FriendsController < ApplicationController
     @friend.status = "accepted"
     @friend.save
     Friend.create({user_id: @friend.friend_id, friend_id: @friend.user_id, status: "accepted" })
-    render :show
+    render :edit
   end
 
   def destroy

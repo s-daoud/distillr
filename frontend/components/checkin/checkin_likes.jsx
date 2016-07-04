@@ -1,7 +1,7 @@
 const React = require('react');
 
-const SessionStore = require('../stores/session_store');
-const LikeActions = require('../actions/like_actions');
+const SessionStore = require('../../stores/session_store');
+const LikeActions = require('../../actions/like_actions');
 
 const CheckinLike = React.createClass({
   getInitialState(){

@@ -1,8 +1,8 @@
 const React = require('react');
 const Link = require('react-router').Link;
 
-const SessionStore = require('../stores/session_store');
-const CommentActions = require('../actions/comment_actions');
+const SessionStore = require('../../stores/session_store');
+const CommentActions = require('../../actions/comment_actions');
 
 const CommentIndexItem = React.createClass({
   deleteComment(e){

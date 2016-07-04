@@ -5,20 +5,20 @@ const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
-const Link = ReactRouter.Link;
 const Modal = require('react-modal');
 
-const LoginForm = require('./components/login_form');
-const SignupForm = require('./components/signup_form');
 const SessionStore = require('./stores/session_store');
 const SessionActions = require('./actions/session_actions');
 
-const SplashPage = require('./components/splash_page');
+const LoginForm = require('./components/splash/login_form');
+const SignupForm = require('./components/splash/signup_form');
+
+const SplashPage = require('./components/splash/splash_page');
 const NavBar = require('./components/nav_bar');
-const DrinkPage = require('./components/drink_page');
-const CheckinForm = require('./components/checkin_form');
-const ProfilePage = require('./components/profile_page');
-const FriendIndex = require('./components/friend_index');
+const DrinkPage = require('./components/drink/drink_page');
+const CheckinForm = require('./components/checkin/checkin_form');
+const ProfilePage = require('./components/user/profile_page');
+const FriendIndex = require('./components/user/friend_index');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){

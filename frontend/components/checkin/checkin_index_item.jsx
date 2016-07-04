@@ -2,8 +2,9 @@ const React = require('react');
 const Link = require('react-router').Link;
 const Rating = require('react-rating');
 
-const CheckinActions = require('../actions/checkin_actions');
-const SessionStore = require('../stores/session_store');
+const CheckinActions = require('../../actions/checkin_actions');
+const SessionStore = require('../../stores/session_store');
+
 const CommentIndex = require('./comment_index');
 
 const CheckinIndexItem = React.createClass({

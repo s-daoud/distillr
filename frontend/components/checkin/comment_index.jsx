@@ -1,7 +1,8 @@
 const React = require('react');
 
-const CheckinStore = require('../stores/checkin_store');
-const CommentActions = require('../actions/comment_actions');
+const CheckinStore = require('../../stores/checkin_store');
+const CommentActions = require('../../actions/comment_actions');
+
 const CommentIndexItem = require('./comment_index_item');
 const CheckinLike = require('./checkin_likes');
 

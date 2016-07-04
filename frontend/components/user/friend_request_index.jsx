@@ -1,7 +1,9 @@
 const React = require('react');
-const UserStore = require('../stores/user_store');
-const SessionStore = require('../stores/session_store');
-const FriendActions = require('../actions/friend_actions');
+
+const UserStore = require('../../stores/user_store');
+const SessionStore = require('../../stores/session_store');
+const FriendActions = require('../../actions/friend_actions');
+
 const FriendRequestItem = require('./friend_request_item');
 
 const FriendRequestIndex = React.createClass({

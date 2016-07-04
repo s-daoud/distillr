@@ -1,10 +1,11 @@
 const React = require('react');
 
-const UserStore = require('../stores/user_store');
-const UserActions = require('../actions/user_actions');
-const CheckinIndex = require('./checkin_index');
-const SessionStore = require('../stores/session_store');
-const FriendActions = require('../actions/friend_actions');
+const UserStore = require('../../stores/user_store');
+const SessionStore = require('../../stores/session_store');
+const UserActions = require('../../actions/user_actions');
+const FriendActions = require('../../actions/friend_actions');
+
+const CheckinIndex = require('../checkin/checkin_index');
 
 const ProfilePage = React.createClass({
   getInitialState(){
