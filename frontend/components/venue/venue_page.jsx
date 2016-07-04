@@ -27,17 +27,17 @@ const VenuePage = React.createClass({
   render(){
     return(
       <div className="venue-flex">
-        <div>
-          <div>
+        <div className="venue-sidebar">
+          <div className="venue-info">
             <h3>{this.state.venue.name}</h3>
             <p>{this.state.venue.description}</p>
             <p>{this.state.venue.address}</p>
           </div>
-          <div>
+          <div className="venue-info">
             <VenueMap venue={this.state.venue}/>
           </div>
         </div>
-        <div>
+        <div className="venue-feed">
           <CheckinIndex source={{loc: "venue", id: this.props.params.venueId}}/>
         </div>
       </div>

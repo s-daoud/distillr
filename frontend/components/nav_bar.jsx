@@ -30,6 +30,10 @@ const NavBar = React.createClass({
     e.preventDefault();
     hashHistory.push("friends");
   },
+  goToNearby(e){
+    e.preventDefault();
+    hashHistory.push("nearby");
+  },
   addDrink(e){
     e.preventDefault();
     this.modalComponent = <DrinkForm closeModal={this.closeModal}/>;
@@ -61,6 +65,9 @@ const NavBar = React.createClass({
                   </li>
                   <li className="clickable" onClick={this.addVenue}>
                     Add Venue
+                  </li>
+                  <li className="clickable" onClick={this.goToNearby}>
+                    Nearby Venues
                   </li>
               </ul>
             </ul>

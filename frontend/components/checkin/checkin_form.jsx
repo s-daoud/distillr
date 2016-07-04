@@ -152,7 +152,7 @@ const CheckinForm = React.createClass({
 
             <input type="text" onFocus={this.venueFocus} onBlur={this.venueBlur}
                    onChange={this.updateVenue} value={this.state.venue}
-                   placeholder="Venue"/>
+                   placeholder="Venue (optional)"/>
             <ul onMouseOver={this.venueFocus} className={venueClassName}>{venueDropdown}</ul>
 
             <div>

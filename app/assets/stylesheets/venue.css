@@ -1,6 +1,27 @@
 .map{
-  width: 300px;
+  width: 334px;
   height: 400px;
+  margin: 0 auto;
+}
+
+.nearby-map{
+  width: 740px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.nearby-box{
+  width: 740px;
+  padding: 5px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid black;
+  background-color: #fff;
+}
+
+#nearby-desc{
+  text-align: right;
+  padding-right: 0;
 }
 
 .venue-flex{
@@ -9,4 +30,33 @@
   width: 100%;
   justify-content: space-between;
   margin: 0 auto;
+}
+
+.venue-info{
+  border: 1px solid black;
+  background-color: #fff;
+  padding: 5px;
+  position: relative;
+}
+
+.venue-sidebar{
+  flex: 1;
+  margin: 50px 10px 0 0;
+}
+
+.venue-feed{
+  flex: 2;
+}
+
+.venue-info h3{
+  position: absolute;
+  top: -40px;
+}
+
+.venue-info:first-child{
+  margin-bottom: 30px;
+}
+
+.venue-info p{
+  padding: 8px;
 }
