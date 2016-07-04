@@ -103,7 +103,6 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [ ] create controllers: `Venues`, `VenueLikes`
 - [ ] setup API/flux for venues cycle
 - [ ] venue page with info, static map with location marker, and feed with checkins at that venue
-- [ ] like/unlike button on the venue page
 - [ ] nearby venues page, pulls in browser location and sets markers to venues in bounds of map with location at center
 - [ ] lists venues whose markers are shown
 - [ ] add nearby page to navbar
@@ -121,15 +120,13 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [ ] create seed data
 - [ ] style page
 
-### Phase 7: Search and recipes (1 day, W2D3)
+### Phase 7: Search and misc bonuses (1 day, W2D3)
 
 **Objective:** Allow searching for drinks/venues and have recipes on the drink pages
 
 - [ ] interactive, dropdown search in nav bar, searches through both drinks and venues
 - [ ] style navbar
-- [ ] make sure clicking username in navbar makes dropdown with: feed, profile, friends, and log out
-- [ ] research how to implement and create tables and models for recipes, ingredients, directions
-- [ ] add recipe component to drink page
+- [ ] implement a few bonus features
 
 ### Phase 8: Cleanup and seeding (1 day, W2D4)
 
@@ -146,5 +143,5 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [ ] upload image with checkin/when making new drink
 - [ ] user info pane with drinks consumed, unique consumed, number of friends
 - [ ] checkin from drink page with drink already filled in
+- [ ] checkin from venue page with venue already filled in
 - [ ] badges
-- [ ] profile pictures

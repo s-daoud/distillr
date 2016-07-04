@@ -8,6 +8,8 @@
   position: absolute;
   top: 62px;
   z-index: 1;
+  max-height: 155px;
+  overflow-y: auto;
 }
 
 .drink-dropdown li{
