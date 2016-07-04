@@ -81,7 +81,10 @@ const CheckinForm = React.createClass({
   handleSubmit(e){
     e.preventDefault();
     const drinkId = this.state.drinkList[Object.keys(this.state.drinkList)[0]].id;
-    const venueId = this.state.venueList[Object.keys(this.state.venueList)[0]].id;
+    let venueId;
+    if (Object.keys(this.state.venueList).length !== 0 && this.state.venueList.constructor === Object) {
+      venueId = this.state.venueList[Object.keys(this.state.venueList)[0]].id;
+    }
     CheckinActions.createCheckin({user_id: SessionStore.currentUser().id,
                                   drink_id: parseInt(drinkId),
                                   venue_id: parseInt(venueId),
