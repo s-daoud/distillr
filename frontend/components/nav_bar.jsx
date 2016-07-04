@@ -55,7 +55,8 @@ const NavBar = React.createClass({
             </ul>
             <ul className="header-list">
               <a href="#">
-                <li className="dropdown">{SessionStore.currentUser().username}
+                <li className="dropdown">
+                  {SessionStore.currentUser().username}&nbsp;&nbsp;<i className="fa fa-caret-down"></i>
                   <ul className="dropdown-list">
                     <li onClick={this.goToFeed}>
                       Recent Activity
