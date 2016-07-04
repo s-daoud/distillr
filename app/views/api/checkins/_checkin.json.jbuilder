@@ -7,6 +7,7 @@ json.rating checkin.rating
 json.review checkin.review
 json.drinkId checkin.drink.id
 json.likes checkin.likes
+json.venue checkin.venue
 
 json.comments checkin.comments do |comment|
   json.comment comment.comment

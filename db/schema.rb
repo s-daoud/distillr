@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701165514) do
+ActiveRecord::Schema.define(version: 20160704170800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,12 @@ ActiveRecord::Schema.define(version: 20160701165514) do
     t.text     "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "venue_id"
   end
 
   add_index "checkins", ["drink_id"], name: "index_checkins_on_drink_id", using: :btree
   add_index "checkins", ["user_id"], name: "index_checkins_on_user_id", using: :btree
+  add_index "checkins", ["venue_id"], name: "index_checkins_on_venue_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -79,5 +81,15 @@ ActiveRecord::Schema.define(version: 20160701165514) do
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.text     "description"
+    t.string   "address",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "venues", ["address"], name: "index_venues_on_address", unique: true, using: :btree
 
 end

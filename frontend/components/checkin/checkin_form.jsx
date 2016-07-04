@@ -5,6 +5,7 @@ const Rating = require('react-rating');
 const ErrorStore = require('../../stores/error_store');
 const SessionStore = require('../../stores/session_store');
 const DrinkStore = require('../../stores/drink_store');
+const VenueStore = require('../../stores/venue_store');
 const CheckinActions = require('../../actions/checkin_actions');
 
 const CheckinIndex = require('./checkin_index');
@@ -12,8 +13,9 @@ const FriendRequestIndex = require('../user/friend_request_index');
 
 const CheckinForm = React.createClass({
   getInitialState(){
-    return ({drink: "", drinkList: {}, rating: "", initialRating: 0,
-            review: "", focused: false, errors: ErrorStore.formErrors("checkin")});
+    return ({drink: "", drinkList: {}, venue: "", venueList: {},
+            rating: "", initialRating: 0, review: "", focused: false, venueFocused: false,
+            errors: ErrorStore.formErrors("checkin")});
   },
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.trackErrors);
@@ -45,6 +47,27 @@ const CheckinForm = React.createClass({
     });
     this.setState({drink: e.target.className, drinkList: drink, focused: false});
   },
+  updateVenue(e){
+    e.preventDefault();
+    const venues = {};
+    this.allVenues = VenueStore.all();
+    Object.keys(this.allVenues).forEach( id => {
+      if (this.allVenues[id].name.toLowerCase().includes(e.target.value.toLowerCase())) {
+        venues[id] = this.allVenues[id];
+      }
+    });
+    this.setState({venue: e.target.value, venueList: venues, venueFocused: true});
+  },
+  autoVenue(e){
+    e.preventDefault();
+    const venue = {};
+    Object.keys(this.allVenues).forEach( venueId => {
+      if (this.allVenues[venueId].name === (e.target.className)) {
+        venue[venueId] = this.allVenues[venueId];
+      }
+    });
+    this.setState({venue: e.target.className, venueList: venue, venueFocused: false});
+  },
   updateRating(rating){
     this.setState({rating: rating});
   },
@@ -58,8 +81,10 @@ const CheckinForm = React.createClass({
   handleSubmit(e){
     e.preventDefault();
     const drinkId = this.state.drinkList[Object.keys(this.state.drinkList)[0]].id;
+    const venueId = this.state.venueList[Object.keys(this.state.venueList)[0]].id;
     CheckinActions.createCheckin({user_id: SessionStore.currentUser().id,
                                   drink_id: parseInt(drinkId),
+                                  venue_id: parseInt(venueId),
                                   rating: parseInt(this.state.rating),
                                   review: this.state.review});
     this.setState({drink: "", rating: "", review: "", initialRating: 0});
@@ -71,6 +96,14 @@ const CheckinForm = React.createClass({
   blur(e){
     e.preventDefault();
     this.setState({focused: false});
+  },
+  venueFocus(e){
+    e.preventDefault();
+    this.setState({venueFocused: true});
+  },
+  venueBlur(e){
+    e.preventDefault();
+    this.setState({venueFocused: false});
   },
   render(){
     let errors = "";
@@ -93,6 +126,20 @@ const CheckinForm = React.createClass({
       className += " focus";
     }
 
+    let venueList = this.state.venueList;
+
+    const venueDropdown = Object.keys(venueList).map( venueId => {
+      return <li key={venueList[venueId].id}
+                 className={venueList[venueId].name}
+                 onMouseDown={this.autoVenue}>{venueList[venueId].name}
+             </li>;
+    });
+
+    let venueClassName = "drink-dropdown venue-dropdown";
+    if (this.state.venueFocused){
+      venueClassName += " focus";
+    }
+
     return (
       <div>
         <div className="checkin-form">
@@ -102,6 +149,11 @@ const CheckinForm = React.createClass({
                    onChange={this.updateDrink} value={this.state.drink}
                    placeholder="Drink" id="checkin-drink"/>
             <ul onMouseOver={this.focus} className={className}>{drinkDropdown}</ul>
+
+            <input type="text" onFocus={this.venueFocus} onBlur={this.venueBlur}
+                   onChange={this.updateVenue} value={this.state.venue}
+                   placeholder="Venue"/>
+            <ul onMouseOver={this.venueFocus} className={venueClassName}>{venueDropdown}</ul>
 
             <div>
               <Rating initialRate={this.state.initialRating}

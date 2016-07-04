@@ -32,6 +32,8 @@ header{
 
 .header-list{
   padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .dropdown {
@@ -82,4 +84,5 @@ header{
 .clickable {
   cursor: pointer;
   position: relative;
+  padding: 0 10px;
 }

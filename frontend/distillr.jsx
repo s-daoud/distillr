@@ -19,6 +19,7 @@ const DrinkPage = require('./components/drink/drink_page');
 const CheckinForm = require('./components/checkin/checkin_form');
 const ProfilePage = require('./components/user/profile_page');
 const FriendIndex = require('./components/user/friend_index');
+const VenuePage = require('./components/venue/venue_page');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
@@ -59,6 +60,7 @@ const routes = (
       <Route component={ProfilePage} path="users/:userId" />
       <Route component={DrinkPage} path="drinks/:drinkId" />
       <Route component={FriendIndex} path="friends" />
+      <Route component={VenuePage} path="venues/:venueId" />
     </Route>
   </Router>
 );

@@ -3,11 +3,11 @@ const hashHistory = require('react-router').hashHistory;
 
 const ErrorStore = require('../../stores/error_store');
 const ErrorActions = require('../../actions/error_actions');
-const DrinkActions = require('../../actions/drink_actions');
+const VenueActions = require('../../actions/venue_actions');
 
-const DrinkForm = React.createClass({
+const VenueForm = React.createClass({
   getInitialState(){
-    return ({name: "", description: "", image_url: "", errors: ErrorStore.formErrors("drink")});
+    return ({name: "", description: "", address: "", errors: ErrorStore.formErrors("venue")});
   },
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.trackErrors);
@@ -21,7 +21,7 @@ const DrinkForm = React.createClass({
     this.errorListener.remove();
   },
   trackErrors(){
-    this.setState({errors: ErrorStore.formErrors("drink")});
+    this.setState({errors: ErrorStore.formErrors("venue")});
   },
   updateName(e){
     e.preventDefault();
@@ -31,14 +31,15 @@ const DrinkForm = React.createClass({
     e.preventDefault();
     this.setState({description: e.target.value});
   },
-  updateImage(e){
+  updateAddress(e){
     e.preventDefault();
-    this.setState({image_url: e.target.value});
+    this.setState({address: e.target.value});
   },
   handleSubmit(e){
     e.preventDefault();
-    DrinkActions.createDrink({name: this.state.name, description: this.state.description, image_url: this.state.image_url});
-    this.setState({name: "", description: "", image_url: ""});
+    VenueActions.createVenue({name: this.state.name, description: this.state.description,
+                              address: this.state.address});
+    this.setState({name: "", description: "", address: ""});
     this.props.closeModal();
   },
   render(){
@@ -54,13 +55,13 @@ const DrinkForm = React.createClass({
         {errors}
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.updateName} placeholder="Name"/> <br />
-          <input type="text" onChange={this.updateImage} placeholder="Image URL"/> <br />
+          <input type="text" onChange={this.updateAddress} placeholder="Address"/> <br />
           <textarea onChange={this.updateDescription} placeholder="Description" rows="5" cols="50"/> <br />
-          <input type="submit" value="Create Drink" id="add"/>
+          <input type="submit" value="Create Venue" id="add"/>
         </form>
       </div>
     );
   }
 });
 
-module.exports = DrinkForm;
+module.exports = VenueForm;

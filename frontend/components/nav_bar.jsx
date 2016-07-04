@@ -3,10 +3,12 @@ const hashHistory = require('react-router').hashHistory;
 const Modal = require('react-modal');
 
 const DrinkActions = require('../actions/drink_actions');
+const VenueActions = require('../actions/venue_actions');
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 
 const DrinkForm = require('./drink/drink_form');
+const VenueForm = require('./venue/venue_form');
 
 const NavBar = React.createClass({
   getInitialState(){
@@ -14,6 +16,7 @@ const NavBar = React.createClass({
   },
   componentDidMount(){
     DrinkActions.fetchAllDrinks();
+    VenueActions.fetchAllVenues();
   },
   goToFeed(e){
     e.preventDefault();
@@ -26,6 +29,16 @@ const NavBar = React.createClass({
   goToFriends(e){
     e.preventDefault();
     hashHistory.push("friends");
+  },
+  addDrink(e){
+    e.preventDefault();
+    this.modalComponent = <DrinkForm closeModal={this.closeModal}/>;
+    this.openModal();
+  },
+  addVenue(e){
+    e.preventDefault();
+    this.modalComponent = <VenueForm closeModal={this.closeModal}/>;
+    this.openModal();
   },
   closeModal(){
     this.setState({modalOpen: false});
@@ -43,16 +56,19 @@ const NavBar = React.createClass({
 
               </li>
               <ul className="header-list">
-                  <li className="clickable" onClick={this.openModal}>
+                  <li className="clickable" onClick={this.addDrink}>
                     Add Drink
-                    <Modal isOpen={this.state.modalOpen}
-                           onRequestClose={this.closeModal}
-                           className="modal">
-                      <DrinkForm />
-                    </Modal>
+                  </li>
+                  <li className="clickable" onClick={this.addVenue}>
+                    Add Venue
                   </li>
               </ul>
             </ul>
+            <Modal isOpen={this.state.modalOpen}
+                   onRequestClose={this.closeModal}
+                   className="modal">
+              {this.modalComponent}
+            </Modal>
             <ul className="header-list">
               <a href="#">
                 <li className="dropdown">

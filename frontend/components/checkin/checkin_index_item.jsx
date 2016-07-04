@@ -14,16 +14,25 @@ const CheckinIndexItem = React.createClass({
   },
   render(){
     let deleteButton;
-
     if(SessionStore.currentUser().id === this.props.checkin.userId){
       deleteButton = <button className="delete" onClick={this.deleteCheckin}>Delete</button>;
+    }
+
+    let venueLink;
+    if(this.props.checkin.venue){
+      venueLink = <p> at <Link to={`venues/${this.props.checkin.venue.id}`}>{this.props.checkin.venue.name}</Link></p>;
     }
 
     return (
       <div className="checkin-item">
         <div className="checkin-info clearfix">
-          <h4><p><Link to={`users/${this.props.checkin.userId}`}>{this.props.checkin.username} </Link>
-          is drinking a <Link to={`drinks/${this.props.checkin.drinkId}`}>{this.props.checkin.drink}</Link></p>
+          <h4>
+            <div>
+              <p><Link to={`users/${this.props.checkin.userId}`}>{this.props.checkin.username} </Link>
+                  is drinking a <Link to={`drinks/${this.props.checkin.drinkId}`}>{this.props.checkin.drink}</Link>
+              </p>
+              {venueLink}
+            </div>
           <p>{deleteButton}</p></h4>
           <img className="drink-img-small" src={this.props.checkin.drinkImg} />
           <div className="checkin-content">

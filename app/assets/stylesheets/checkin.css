@@ -4,12 +4,16 @@
   border-top: 1px solid #eee;
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
-  width: 161px;
+  width: 159px;
   position: absolute;
   top: 62px;
   z-index: 1;
   max-height: 155px;
   overflow-y: auto;
+}
+
+.venue-dropdown{
+  top: 104px;
 }
 
 .drink-dropdown li{
@@ -81,7 +85,7 @@
 
 .drink-img-small{
   width: 100px;
-  height: 100%;
+  /*height: 100%;*/
   float: right;
   margin: 5px;
 }

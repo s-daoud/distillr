@@ -99,10 +99,10 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 **Objective:** Add venues! With pages, ability to include them in checkins, and location searching
 
-- [ ] create models: `Venue`, `VenueLike`
-- [ ] create controllers: `Venues`, `VenueLikes`
-- [ ] setup API/flux for venues cycle
-- [ ] venue page with info, static map with location marker, and feed with checkins at that venue
+- [x] create model: `Venue`
+- [x] create controller: `Venues`
+- [x] setup API/flux for venues cycle
+- [x] venue page with info, static map with location marker, and feed with checkins at that venue
 - [ ] nearby venues page, pulls in browser location and sets markers to venues in bounds of map with location at center
 - [ ] lists venues whose markers are shown
 - [ ] add nearby page to navbar
@@ -144,4 +144,5 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [ ] user info pane with drinks consumed, unique consumed, number of friends
 - [ ] checkin from drink page with drink already filled in
 - [ ] checkin from venue page with venue already filled in
+- [ ] ability to like venues
 - [ ] badges

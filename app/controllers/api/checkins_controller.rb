@@ -6,6 +6,8 @@ class Api::CheckinsController < ApplicationController
       @checkins = Checkin.all_profile(params[:id])
     elsif params[:loc] == "drink"
       @checkins = Checkin.all_drink(params[:id])
+    elsif params[:loc] == "venue"
+      @checkins = Checkin.all_venue(params[:id])
     end
   end
 
@@ -27,7 +29,7 @@ class Api::CheckinsController < ApplicationController
 
   private
   def checkin_params
-    params.require(:checkin).permit(:drink_id, :rating, :review)
+    params.require(:checkin).permit(:drink_id, :venue_id, :rating, :review)
   end
 
 end

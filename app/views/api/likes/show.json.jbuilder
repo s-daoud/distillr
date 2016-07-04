@@ -5,7 +5,9 @@ json.drink @like.checkin.drink.name
 json.rating @like.checkin.rating
 json.review @like.checkin.review
 json.drinkId @like.checkin.drink.id
+json.drinkImg @like.checkin.drink.image_url
 json.likes @like.checkin.likes
+json.venue @like.checkin.venue
 json.comments @like.checkin.comments do |comment|
   json.comment comment.comment
   json.userId comment.user_id

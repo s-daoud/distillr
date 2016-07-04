@@ -3,6 +3,7 @@ class Checkin < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :drink
+  belongs_to :venue
   has_many :comments
   has_many :likes
 
@@ -12,6 +13,10 @@ class Checkin < ActiveRecord::Base
 
   def self.all_drink(id)
     Checkin.where("drink_id = ?", id)
+  end
+
+  def self.all_venue(id)
+    Checkin.where("venue_id = ?", id)
   end
 
   def self.all_friends(id)
