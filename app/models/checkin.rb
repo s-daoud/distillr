@@ -1,5 +1,6 @@
 class Checkin < ActiveRecord::Base
   validates :user_id, :drink_id, :rating, presence: true
+  validates :drink_id, :rating, numericality: { greater_than: 0 }
 
   belongs_to :user
   belongs_to :drink

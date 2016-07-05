@@ -9,7 +9,6 @@ module.exports = {
     });
   },
   fetchSingleDrink(id, success){
-    debugger
     $.ajax({
       url: `api/drinks/${id}`,
       success(resp){

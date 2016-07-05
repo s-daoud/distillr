@@ -9,7 +9,6 @@ module.exports = {
     });
   },
   fetchSingleVenue(id, success){
-    debugger
     $.ajax({
       url: `api/venues/${id}`,
       success(resp){

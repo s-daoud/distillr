@@ -222,3 +222,26 @@ h4{
 .red-gold{
   color: #ff9933;
 }
+
+.checkin-error{
+  display: inline-block;
+  position: absolute;
+  top: 17%;
+  left: 66%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkin-error:nth-child(2){
+  display: inline-block;
+  position: absolute;
+  top: 41%;
+  left: 66%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  margin-top: 15px;
+}

@@ -84,8 +84,11 @@ const CheckinForm = React.createClass({
   },
   handleSubmit(e){
     e.preventDefault();
-    const drinkId = this.state.drinkList[Object.keys(this.state.drinkList)[0]].id;
+    let drinkId;
     let venueId;
+    if (Object.keys(this.state.drinkList).length !== 0 && this.state.drinkList.constructor === Object) {
+      drinkId = this.state.drinkList[Object.keys(this.state.drinkList)[0]].id;
+    }
     if (Object.keys(this.state.venueList).length !== 0 && this.state.venueList.constructor === Object) {
       venueId = this.state.venueList[Object.keys(this.state.venueList)[0]].id;
     }
@@ -116,7 +119,7 @@ const CheckinForm = React.createClass({
     let errors = "";
     if(this.state.errors){
       errors = this.state.errors.map(error => {
-        return (<div className="error" key={error}>{error}<br/></div>);
+        return (<div className="checkin-error" key={error}>{error}<br/></div>);
       });
     }
     let drinkList = this.state.drinkList;
