@@ -20,8 +20,9 @@ class Venue < ActiveRecord::Base
     @venues.each do |venue|
       if venue.checkins.empty?
         rated_venues[venue] = 0
+      else
+        rated_venues[venue] = (venue.checkins.average(:rating)).round(1)
       end
-      rated_venues[venue] = (venue.checkins.average(:rating)).round(1)
     end
     rated_venues
   end
