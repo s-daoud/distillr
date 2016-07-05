@@ -1,13 +1,15 @@
 module.exports = {
-  fetchAllVenues(success){
+  fetchAllVenues(success, source){
     $.ajax({
       url: "api/venues",
+      data: source,
       success(resp){
         success(resp);
       }
     });
   },
   fetchSingleVenue(id, success){
+    debugger
     $.ajax({
       url: `api/venues/${id}`,
       success(resp){

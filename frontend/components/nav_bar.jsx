@@ -2,8 +2,6 @@ const React = require('react');
 const hashHistory = require('react-router').hashHistory;
 const Modal = require('react-modal');
 
-const DrinkActions = require('../actions/drink_actions');
-const VenueActions = require('../actions/venue_actions');
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 
@@ -13,10 +11,6 @@ const VenueForm = require('./venue/venue_form');
 const NavBar = React.createClass({
   getInitialState(){
     return {modalOpen: false};
-  },
-  componentDidMount(){
-    DrinkActions.fetchAllDrinks();
-    VenueActions.fetchAllVenues();
   },
   goToFeed(e){
     e.preventDefault();
@@ -33,6 +27,10 @@ const NavBar = React.createClass({
   goToNearby(e){
     e.preventDefault();
     hashHistory.push("nearby");
+  },
+  goToTopRated(e){
+    e.preventDefault();
+    hashHistory.push("top_rated");
   },
   addDrink(e){
     e.preventDefault();
@@ -68,6 +66,9 @@ const NavBar = React.createClass({
                   </li>
                   <li className="clickable" onClick={this.goToNearby}>
                     Nearby Venues
+                  </li>
+                  <li className="clickable" onClick={this.goToTopRated}>
+                    Top Rated
                   </li>
               </ul>
             </ul>

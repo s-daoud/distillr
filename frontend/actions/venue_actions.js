@@ -4,8 +4,8 @@ const VenueApiUtil = require('../util/venue_api_util');
 const ErrorActions = require('./error_actions');
 
 const VenueActions = {
-  fetchAllVenues(){
-    VenueApiUtil.fetchAllVenues(VenueActions.receiveAllVenues);
+  fetchAllVenues(source){
+    VenueApiUtil.fetchAllVenues(VenueActions.receiveAllVenues, source);
   },
   fetchSingleVenue(id){
     VenueApiUtil.fetchSingleVenue(id, VenueActions.receiveSingleVenue);

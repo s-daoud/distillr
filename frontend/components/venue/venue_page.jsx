@@ -1,4 +1,5 @@
 const React = require('react');
+const Rating = require('react-rating');
 
 const VenueStore = require('../../stores/venue_store');
 const VenueActions = require('../../actions/venue_actions');
@@ -13,6 +14,7 @@ const VenuePage = React.createClass({
   componentDidMount(){
     window.scrollTo(0,0);
     this.venueListener = VenueStore.addListener(this._onChange);
+    VenueActions.fetchSingleVenue(this.props.params.venueId);
   },
   componentWillUnmount(){
     this.venueListener.remove();
@@ -32,6 +34,9 @@ const VenuePage = React.createClass({
             <h3>{this.state.venue.name}</h3>
             <p>{this.state.venue.description}</p>
             <p>{this.state.venue.address}</p>
+            <Rating className="venue-rating" placeholderRate={parseFloat(this.state.venue.rating)}
+                    fractions={parseInt("10")} empty="fa fa-glass grey fa-2x"
+                    placeholder="fa fa-glass red-gold fa-2x" readonly={true}/>
           </div>
           <div className="venue-info">
             <VenueMap venue={this.state.venue}/>

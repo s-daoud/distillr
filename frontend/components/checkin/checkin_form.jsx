@@ -7,6 +7,8 @@ const SessionStore = require('../../stores/session_store');
 const DrinkStore = require('../../stores/drink_store');
 const VenueStore = require('../../stores/venue_store');
 const CheckinActions = require('../../actions/checkin_actions');
+const DrinkActions = require('../../actions/drink_actions');
+const VenueActions = require('../../actions/venue_actions');
 
 const CheckinIndex = require('./checkin_index');
 const FriendRequestIndex = require('../user/friend_request_index');
@@ -19,6 +21,8 @@ const CheckinForm = React.createClass({
   },
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.trackErrors);
+    DrinkActions.fetchAllDrinks();
+    VenueActions.fetchAllVenues();
   },
   componentWillUnmount(){
     this.errorListener.remove();

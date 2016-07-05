@@ -4,8 +4,8 @@ const DrinkApiUtil = require('../util/drink_api_util');
 const ErrorActions = require('./error_actions');
 
 const DrinkActions = {
-  fetchAllDrinks(){
-    DrinkApiUtil.fetchAllDrinks(DrinkActions.receiveAllDrinks);
+  fetchAllDrinks(source){
+    DrinkApiUtil.fetchAllDrinks(DrinkActions.receiveAllDrinks, source);
   },
   fetchSingleDrink(id){
     DrinkApiUtil.fetchSingleDrink(id, DrinkActions.receiveSingleDrink);

@@ -1,7 +1,11 @@
 class Api::DrinksController < ApplicationController
   def index
-    @drinks = Drink.all
-    render json: @drinks
+    if params[:loc] == "ratings"
+      @drinks = Drink.by_ratings
+    else
+      @drinks = Drink.with_ratings
+    end
+    render :ratings
   end
 
   def create
@@ -14,8 +18,8 @@ class Api::DrinksController < ApplicationController
   end
 
   def show
-    @drink = Drink.find(params[:id])
-    render json: @drink
+    @drink = Drink.add_rating(params[:id])
+    render :show
   end
 
   private

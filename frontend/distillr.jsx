@@ -21,6 +21,7 @@ const ProfilePage = require('./components/user/profile_page');
 const FriendIndex = require('./components/user/friend_index');
 const VenuePage = require('./components/venue/venue_page');
 const NearbyVenues = require('./components/venue/nearby_venues');
+const TopRated = require('./components/ratings/top_rated');
 
 const _ensureLoggedIn = function(nextState, replace){
   if (!SessionStore.isUserLoggedIn()){
@@ -63,6 +64,7 @@ const routes = (
       <Route component={FriendIndex} path="friends" />
       <Route component={VenuePage} path="venues/:venueId" />
       <Route component={NearbyVenues} path="nearby" />
+      <Route component={TopRated} path="top_rated" />
     </Route>
   </Router>
 );

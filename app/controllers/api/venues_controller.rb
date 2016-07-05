@@ -1,7 +1,11 @@
 class Api::VenuesController < ApplicationController
   def index
-    @venues = Venue.all
-    render json: @venues
+    if params[:loc] == "ratings"
+      @venues = Venue.by_ratings
+    else
+      @venues = Venue.with_ratings
+    end
+    render :ratings
   end
 
   def create
@@ -14,8 +18,8 @@ class Api::VenuesController < ApplicationController
   end
 
   def show
-    @venue = Venue.find(params[:id])
-    render json: @venue
+    @venue = Venue.add_rating(params[:id])
+    render :show
   end
 
   private

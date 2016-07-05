@@ -114,11 +114,10 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 - [ ] add average rating to drink page
 - [ ] add average rating to venue page
-- [ ] page with top drinks and venues (ordered by average rating, limited to 10)
-- [ ] add top rated page to navbar
-- [ ] top rated drinks on sidebars
+- [x] page with top drinks and venues (ordered by average rating, limited to 10)
+- [x] add top rated page to navbar
 - [ ] create seed data
-- [ ] style page
+- [x] style page
 
 ### Phase 7: Search and misc bonuses (1 day, W2D3)
 
@@ -145,4 +144,5 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [ ] checkin from drink page with drink already filled in
 - [ ] checkin from venue page with venue already filled in
 - [ ] ability to like venues
+- [ ] nearby venues only shows venues in bounds
 - [ ] badges
