@@ -41,4 +41,24 @@ class User < ActiveRecord::Base
     @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
+
+  def self.unique_drinks(id)
+    user = User.find(id)
+    user.checkins.count("DISTINCT drink_id")
+  end
+
+  def self.total_drinks(id)
+    user = User.find(id)
+    user.checkins.count
+  end
+
+  def self.unique_venues(id)
+    user = User.find(id)
+    user.checkins.where("venue_id > 0").count("DISTINCT venue_id")
+  end
+
+  def self.num_friends(id)
+    user = User.find(id)
+    user.friend_requests.where(status: "accepted").count
+  end
 end

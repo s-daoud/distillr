@@ -75,6 +75,11 @@ header{
   left: 25px;
   width: 120px;
   height: 35px;
+  background-color: #FEB80A;
+}
+
+#add:hover{
+  background-color: #ff9933;
 }
 
 .header-list:hover .dropdown-list {

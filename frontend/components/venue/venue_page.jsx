@@ -20,6 +20,7 @@ const VenuePage = React.createClass({
     this.venueListener.remove();
   },
   componentWillReceiveProps(newProps){
+    window.scrollTo(0,0);
     const venue = VenueStore.find(newProps.params.venueId);
     this.setState({venue: venue});
   },

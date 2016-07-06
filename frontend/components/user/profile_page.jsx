@@ -6,6 +6,7 @@ const UserActions = require('../../actions/user_actions');
 const FriendActions = require('../../actions/friend_actions');
 
 const CheckinIndex = require('../checkin/checkin_index');
+const UserInfoBox = require('./user_info_box');
 
 const ProfilePage = React.createClass({
   getInitialState(){
@@ -23,6 +24,7 @@ const ProfilePage = React.createClass({
     this.setState({user: UserStore.find(this.props.params.userId)});
   },
   componentWillReceiveProps(newProps){
+    window.scrollTo(0,0);
     this.setState({user: UserStore.find(newProps.params.userId)});
   },
   addFriend(e){
@@ -53,12 +55,12 @@ const ProfilePage = React.createClass({
           }
         });
 
-        this.state.user.requests.forEach( friend => {
-          if (friend.friend_id === parseInt(this.props.params.userId) && friend.user_id === SessionStore.currentUser().id){
-            friendButton = <button className="friend-button" id="pending" disabled>Pending</button>;
-          }
-        });
-        
+        // this.state.user.requests.forEach( friend => {
+        //   if (friend.friend_id === parseInt(this.props.params.userId) && friend.user_id === SessionStore.currentUser().id){
+        //     friendButton = <button className="friend-button" id="pending" disabled>Pending</button>;
+        //   }
+        // });
+
         this.state.user.requests.forEach( friend => {
           if (friend.user_id === this.state.user.id && friend.friend_id === SessionStore.currentUser().id){
             friendButton = <button className="friend-button" id="pending" disabled>Pending</button>;
@@ -83,7 +85,14 @@ const ProfilePage = React.createClass({
           <h1>{username}</h1>
           {friendButton}
         </div>
-        <CheckinIndex source={{loc: "profile", id: this.props.params.userId}}/>
+        <div className="page-flex">
+          <div className="feed-flex">
+            <CheckinIndex source={{loc: "profile", id: this.props.params.userId}}/>
+          </div>
+          <div className="user-flex">
+            <UserInfoBox user={this.state.user} />
+          </div>
+        </div>
       </div>
     );
   }

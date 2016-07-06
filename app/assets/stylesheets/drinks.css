@@ -6,7 +6,7 @@ h3{
 }
 
 #add-image{
-  background-color: #0080bc;
+  background-color: #FEB80A;
   border-radius: 5px;
   color: #fff;
   margin: 5px;
@@ -15,6 +15,10 @@ h3{
   vertical-align: middle;
   width: 120px;
   height: 20px;
+}
+
+#add-image:hover{
+  background-color: #ff9933;
 }
 
 .drink-img{

@@ -19,6 +19,7 @@ const DrinkPage = React.createClass({
     this.drinkListener.remove();
   },
   componentWillReceiveProps(newProps){
+    window.scrollTo(0,0);
     const drink = DrinkStore.find(newProps.params.drinkId);
     this.setState({drink: drink});
   },

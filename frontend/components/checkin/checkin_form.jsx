@@ -12,6 +12,7 @@ const VenueActions = require('../../actions/venue_actions');
 
 const CheckinIndex = require('./checkin_index');
 const FriendRequestIndex = require('../user/friend_request_index');
+const UserInfoBox = require('../user/user_info_box');
 
 const CheckinForm = React.createClass({
   getInitialState(){
@@ -149,41 +150,41 @@ const CheckinForm = React.createClass({
     if (this.state.venueFocused){
       venueClassName += " focus";
     }
-
     return (
-      <div>
-        <div className="checkin-form">
-          <h3>Check In</h3>
-          {errors}
-          <form onSubmit={this.handleSubmit} className="form" id="checkin" autoComplete="off">
-            <input type="text" onFocus={this.focus} onBlur={this.blur}
-                   onChange={this.updateDrink} value={this.state.drink}
-                   placeholder="Drink" id="checkin-drink"/>
-            <ul onMouseOver={this.focus} className={className}>{drinkDropdown}</ul>
+      <div className="main-flex">
+        <div className="checkin-flex">
+          <div className="feed">
+            <h3>Check In</h3>
+            <div className="checkin-item">
+              {errors}
+              <form onSubmit={this.handleSubmit} className="form" id="checkin" autoComplete="off">
+                <input type="text" onFocus={this.focus} onBlur={this.blur}
+                       onChange={this.updateDrink} value={this.state.drink}
+                       placeholder="Drink" id="checkin-drink"/>
+                <ul onMouseOver={this.focus} className={className}>{drinkDropdown}</ul>
 
-            <input type="text" onFocus={this.venueFocus} onBlur={this.venueBlur}
-                   onChange={this.updateVenue} value={this.state.venue}
-                   placeholder="Venue (optional)"/>
-            <ul onMouseOver={this.venueFocus} className={venueClassName}>{venueDropdown}</ul>
+                <input type="text" onFocus={this.venueFocus} onBlur={this.venueBlur}
+                       onChange={this.updateVenue} value={this.state.venue}
+                       placeholder="Venue (optional)"/>
+                <ul onMouseOver={this.venueFocus} className={venueClassName}>{venueDropdown}</ul>
 
-            <div>
-              <Rating initialRate={this.state.initialRating}
-                      empty="fa fa-glass grey fa-2x" full="fa fa-glass gold fa-2x"
-                      onChange={this.updateRating} onClick={this.updateInitial}/>
+                <div>
+                  <Rating initialRate={this.state.initialRating}
+                          empty="fa fa-glass grey fa-2x" full="fa fa-glass gold fa-2x"
+                          onChange={this.updateRating} onClick={this.updateInitial}/>
+                </div>
+
+                <textarea onChange={this.updateReview} value={this.state.review}
+                          placeholder="Review (optional)" rows="2" cols="30"/> <br />
+                <input type="submit" value="Check in!" id="checkin-button"/>
+              </form>
             </div>
-
-            <textarea onChange={this.updateReview} value={this.state.review}
-                      placeholder="Review (optional)" rows="2" cols="30"/> <br />
-            <input type="submit" value="Check in!" id="checkin-button"/>
-          </form>
+          </div>
+          <CheckinIndex source={{loc: "feed", id: SessionStore.currentUser().id}}/>
         </div>
-        <div className="main-flex">
-          <div className="checkin-flex">
-            <CheckinIndex source={{loc: "feed", id: SessionStore.currentUser().id}}/>
-          </div>
-          <div className="friend-flex">
-            <FriendRequestIndex />
-          </div>
+        <div className="friend-flex">
+          <UserInfoBox user={SessionStore.currentUser()} />
+          <FriendRequestIndex />
         </div>
       </div>
     );
