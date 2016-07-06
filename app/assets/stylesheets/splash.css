@@ -47,7 +47,7 @@ input:focus{
 .splash-logo{
   width: 400px;
   height: 200px;
-  background-image: url(http://res.cloudinary.com/distillr/image/upload/v1467761889/distillr-logo-big_db7i4y.png);
+  background-image: url(https://res.cloudinary.com/distillr/image/upload/v1467761889/distillr-logo-big_db7i4y.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -62,7 +62,7 @@ input:focus{
 }
 
 .main{
-  background-image: url(http://res.cloudinary.com/distillr/image/upload/c_scale,w_1920/v1467761909/splash_zc38xw.jpg);
+  background-image: url(https://res.cloudinary.com/distillr/image/upload/c_scale,w_1920/v1467761909/splash_zc38xw.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
