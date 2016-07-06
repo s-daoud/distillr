@@ -153,6 +153,7 @@ const CheckinForm = React.createClass({
     return (
       <div>
         <div className="checkin-form">
+          <h3>Check In</h3>
           {errors}
           <form onSubmit={this.handleSubmit} className="form" id="checkin" autoComplete="off">
             <input type="text" onFocus={this.focus} onBlur={this.blur}

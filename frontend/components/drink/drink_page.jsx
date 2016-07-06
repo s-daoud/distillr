@@ -27,16 +27,24 @@ const DrinkPage = React.createClass({
   },
   render(){
     return(
-      <div>
-        <div className="drink-profile clearfix">
-        <img className="drink-img" src={this.state.drink.image_url} />
-          <h3>{this.state.drink.name}</h3>
-          <p>{this.state.drink.description}</p>
-          <Rating className="drink-rating" placeholderRate={parseFloat(this.state.drink.rating)}
-                  fractions={parseInt("10")} empty="fa fa-glass grey fa-2x"
-                  placeholder="fa fa-glass red-gold fa-2x" readonly={true}/>
+      <div className="drink-img">
+        <div className="venue-flex">
+          <div className="venue-sidebar">
+            <div className="venue-info">
+              <p className="venue-name">{this.state.drink.name}</p>
+              <p>{this.state.drink.description}</p>
+              <Rating className="venue-rating" placeholderRate={parseFloat(this.state.drink.rating)}
+                      fractions={parseInt("10")} empty="fa fa-glass grey fa-2x"
+                      placeholder="fa fa-glass red-gold fa-2x" readonly={true}/>
+            </div>
+            <div className="venue-info">
+              <img src={this.state.drink.image_url} />
+            </div>
+          </div>
+          <div className="venue-feed">
+            <CheckinIndex source={{loc: "drink", id: this.props.params.drinkId}}/>
+          </div>
         </div>
-        <CheckinIndex source={{loc: "drink", id: this.props.params.drinkId}}/>
       </div>
     );
   }

@@ -44,8 +44,13 @@ const SplashPage = React.createClass({
     return (
       <div className="container">
         <div className="main">
+          <div className="splash-logo"></div>
           <div className="splash-nav">
-            <div className="splash-logo"></div>
+            <div className="tagline">
+              <h2>discover</h2>
+              <h2>share</h2>
+              <h2>drink</h2>
+            </div>
             <div className="buttons">
               <button className="padded-button"
                       onClick={this.login}>Log in</button><br />
@@ -61,14 +66,6 @@ const SplashPage = React.createClass({
                    className="modal">
               {this.modalComponent}
             </Modal>
-          </div>
-        </div>
-        <div className="splash-info">
-          <div>
-            Share the cocktails you're drinking and see what your friends are drinking too!
-          </div>
-          <div>
-            Discover new drinks and bars! Not sure what's good? Check out what people have rated a drink!
           </div>
         </div>
       </div>

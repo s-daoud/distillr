@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= depend_on_asset "splash.jpg"
  */
 
 body{

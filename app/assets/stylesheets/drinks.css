@@ -1,30 +1,6 @@
-.drink-img{
-  max-height: 250px;
-  height: 100%;
-  width: auto;
-  float: left;
-  margin-right: 10px;
-}
-
-.drink-profile{
-  max-width: 750px;
-  width: 100%;
-  height: 300px;
-  margin: 20px auto;
-  border: 1px solid #ddd;
-  position: relative;
-  padding: 5px;
-  background-color: #fff;
-}
-
 h3{
   font-size: 20px;
   font-weight: 700;
-  padding: 5px;
-  margin: 5px;
-}
-
-.drink-profile p{
   padding: 5px;
   margin: 5px;
 }
@@ -39,4 +15,9 @@ h3{
   vertical-align: middle;
   width: 120px;
   height: 20px;
+}
+
+.drink-img{
+  background-image: url(http://res.cloudinary.com/distillr/image/upload/c_scale,w_2320/c_crop,h_400,w_2320,x_400,y_700/v1467828422/shutterstock_whiskey_jjtlat.jpg);
+  background-repeat: no-repeat;
 }

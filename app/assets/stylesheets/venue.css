@@ -15,7 +15,7 @@
   padding: 5px;
   margin: 0 auto;
   margin-top: 50px;
-  border: 1px solid black;
+  border: 1px solid #ccc;
   background-color: #fff;
 }
 
@@ -32,8 +32,12 @@
   margin: 0 auto;
 }
 
+.venue-flex h3{
+  color: #fff;
+}
+
 .venue-info{
-  border: 1px solid black;
+  border: 1px solid #ccc;
   background-color: #fff;
   padding: 5px;
   position: relative;
@@ -59,4 +63,14 @@
 
 .venue-info p{
   padding: 8px;
+}
+
+.venue-img {
+  background-image: url(http://res.cloudinary.com/distillr/image/upload/c_crop,h_400,w_2048,y_525/v1467827275/image_bcqlhq.jpg);
+  background-repeat: no-repeat;
+}
+
+.venue-name{
+  font-weight: 700;
+  font-size: 32px;
 }

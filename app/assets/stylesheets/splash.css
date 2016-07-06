@@ -34,7 +34,7 @@ input:focus{
 }
 
 .container{
-  max-width: 1048px;
+  max-width: 1920px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -51,8 +51,8 @@ input:focus{
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  top: -217px;
-  left: -48px;
+  top: -5px;
+  right: 70px;
 }
 
 .form{
@@ -62,22 +62,33 @@ input:focus{
 }
 
 .main{
-  background-image: url(http://res.cloudinary.com/distillr/image/upload/c_scale,w_1048/v1467761909/splash_zc38xw.jpg);
+  background-image: url(http://res.cloudinary.com/distillr/image/upload/c_scale,w_1920/v1467761909/splash_zc38xw.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 1048px;
   width: 100%;
-  max-height: 650px;
   height: 100%;
   margin: 0 auto;
   border: 1px solid #ddd;
+  position: relative;
 }
 
 .splash-nav{
   position: relative;
-  top: 350px;
-  left: 300px;
+  top: 375px;
+  left: 570px;
   width: 205px;
+}
+
+.tagline{
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  font-family: 'Ovo', serif;
+}
+
+h2{
+  color: #fff;
+  font-size: 64px;
 }
 
 .buttons{
@@ -140,21 +151,6 @@ input:focus{
   margin-right: -50%;
   transform: translate(-50%, -50%);
   margin-top: 15px;
-}
-
-.splash-info{
-  display: flex;
-  justify-content: space-between;
-  padding: 30px;
-}
-
-.splash-info > div{
-  flex: 1;
-  padding: 30px;
-}
-
-.splash-info > div:first-child{
-  border-right: 2px solid white;
 }
 
 #guest{

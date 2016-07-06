@@ -28,22 +28,24 @@ const VenuePage = React.createClass({
   },
   render(){
     return(
-      <div className="venue-flex">
-        <div className="venue-sidebar">
-          <div className="venue-info">
-            <h3>{this.state.venue.name}</h3>
-            <p>{this.state.venue.description}</p>
-            <p>{this.state.venue.address}</p>
-            <Rating className="venue-rating" placeholderRate={parseFloat(this.state.venue.rating)}
-                    fractions={parseInt("10")} empty="fa fa-glass grey fa-2x"
-                    placeholder="fa fa-glass red-gold fa-2x" readonly={true}/>
+      <div className="venue-img">
+        <div className="venue-flex">
+          <div className="venue-sidebar">
+            <div className="venue-info">
+              <p className="venue-name">{this.state.venue.name}</p>
+              <p>{this.state.venue.description}</p>
+              <p>{this.state.venue.address}</p>
+              <Rating className="venue-rating" placeholderRate={parseFloat(this.state.venue.rating)}
+                      fractions={parseInt("10")} empty="fa fa-glass grey fa-2x"
+                      placeholder="fa fa-glass red-gold fa-2x" readonly={true}/>
+            </div>
+            <div className="venue-info">
+              <VenueMap venue={this.state.venue}/>
+            </div>
           </div>
-          <div className="venue-info">
-            <VenueMap venue={this.state.venue}/>
+          <div className="venue-feed">
+            <CheckinIndex source={{loc: "venue", id: this.props.params.venueId}}/>
           </div>
-        </div>
-        <div className="venue-feed">
-          <CheckinIndex source={{loc: "venue", id: this.props.params.venueId}}/>
         </div>
       </div>
     );

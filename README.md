@@ -118,14 +118,16 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [x] add top rated page to navbar
 - [x] style page
 
-### Phase 7: Search and misc bonuses (1 day, W2D3)
+### Phase 7: CSS and misc bonuses (1 day, W2D3)
 
-**Objective:** Allow searching for drinks/venues and have recipes on the drink pages
+**Objective:** Style and add more bonus features
 
-- [ ] interactive, dropdown search in nav bar, searches through both drinks and venues
-- [ ] style navbar
-- [ ] restyle splash page
-- [ ] implement a few bonus features
+- [x] restyle splash page
+- [x] restyle drinks
+- [x] restyle venues
+- [ ] restyle profile
+- [ ] restyle feed
+- [ ] user info pane with drinks consumed, unique consumed, number of friends
 
 ### Phase 8: Cleanup and seeding (1 day, W2D4)
 
@@ -146,10 +148,9 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 ### Bonus Features (TBD)
 - [x] upload image when making new drink
-- [ ] user info pane with drinks consumed, unique consumed, number of friends
 - [ ] checkin from drink page with drink already filled in
 - [ ] checkin from venue page with venue already filled in
+- [ ] search for drinks/venues
 - [ ] infinite scroll for feeds
 - [ ] nearby venues only shows venues in bounds
-- [ ] ability to like venues
 - [ ] badges

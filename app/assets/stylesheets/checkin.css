@@ -47,8 +47,13 @@
   top: -40px;
 }
 
+.checkin-form h3{
+  position: absolute;
+  top: -40px;
+}
+
 .checkin-item{
-  border: 1px solid black;
+  border: 1px solid #ccc;
   margin: 5px;
   padding: 5px;
   background-color: #fff;
@@ -60,12 +65,12 @@
   margin: 0 auto;
   margin-top: 50px;
   background-color: #fff;
-  border: 1px solid black;
+  border: 1px solid #ccc;
   position: relative;
 }
 
 #checkin-button{
-  background-color: #ffcc00;
+  background-color: #FEB80A;
   height: 30px;
 }
 
@@ -211,7 +216,7 @@ h4{
 }
 
 .gold{
-  color: #ffcc00;
+  color: #FEB80A;
 }
 
 .grey{
@@ -219,7 +224,7 @@ h4{
 }
 
 .red-gold{
-  color: #ff9933;
+  color: #B96817;
 }
 
 .checkin-error{
