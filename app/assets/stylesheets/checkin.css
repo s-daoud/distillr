@@ -120,15 +120,14 @@ h4{
 }
 
 .clicked{
-  background-color: #333;
+  background-color: #FEB80A;
 }
 
 .clicked:hover{
-  background-color: #000;
+  background-color: #ff9933;
 }
 
 .num-cheers{
-  background-color: #f9f9f9;
   border-radius: 4px;
   text-align: center;
   width: 50px;
@@ -136,6 +135,10 @@ h4{
   margin: 0 220px;
   font-size: 24px;
   padding-top: 4px;
+}
+
+.cheered{
+  background-color: #f9f9f9;
 }
 
 #post{
@@ -202,6 +205,10 @@ h4{
 
 .gold{
   color: #FEB80A;
+}
+
+.black{
+  color: #000;
 }
 
 .grey{

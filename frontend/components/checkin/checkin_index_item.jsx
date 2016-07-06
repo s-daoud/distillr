@@ -34,7 +34,9 @@ const CheckinIndexItem = React.createClass({
               {venueLink}
             </div>
           <p>{deleteButton}</p></h4>
-          <img className="drink-img-small" src={this.props.checkin.drinkImg} />
+          <Link to={`drinks/${this.props.checkin.drinkId}`}>
+            <img className="drink-img-small" src={this.props.checkin.drinkImg} />
+          </Link>
           <div className="checkin-content">
             <p>{this.props.checkin.review}</p>
 

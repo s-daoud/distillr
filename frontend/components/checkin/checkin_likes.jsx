@@ -35,16 +35,20 @@ const CheckinLike = React.createClass({
   render(){
     let cName = "cheers";
     let iconName = "fa fa-glass";
+    let numCheers = <div className="num-cheers"></div>;
     if (this.state.followState === true){
       cName += " clicked";
-      iconName += " gold";
+      iconName += " black";
+    }
+    if (this.state.numLikes > 0) {
+      numCheers = <div className="num-cheers cheered">{this.state.numLikes}&nbsp;<i className="fa fa-glass gold"></i></div>;
     }
     return (
       <div>
         <button className={cName} onClick={this.toggle}>
           <i className={iconName}></i>&nbsp;Cheers!
         </button>
-        <div className="num-cheers">{this.state.numLikes}&nbsp;<i className="fa fa-glass gold"></i></div>
+        {numCheers}
       </div>
     );
   }
