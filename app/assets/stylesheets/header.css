@@ -24,7 +24,7 @@ header{
   padding: 10px 20px;
   width: 120px;
   height: 50px;
-  background-image: url(/assets/distillr-logo.png);
+  background-image: url(http://res.cloudinary.com/distillr/image/upload/c_scale,h_50/v1467761892/distillr-logo_gmvkfc.png);
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
@@ -67,6 +67,7 @@ header{
   width: 400px;
   background-color: #fff;
   padding: 20px;
+  border: 1px solid black;
 }
 
 #add{

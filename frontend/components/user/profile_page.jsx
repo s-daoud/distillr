@@ -58,9 +58,9 @@ const ProfilePage = React.createClass({
             friendButton = <button className="friend-button" id="pending" disabled>Pending</button>;
           }
         });
-
+        
         this.state.user.requests.forEach( friend => {
-          if (friend.user_id === this.state.user.id){
+          if (friend.user_id === this.state.user.id && friend.friend_id === SessionStore.currentUser().id){
             friendButton = <button className="friend-button" id="pending" disabled>Pending</button>;
           }
         });

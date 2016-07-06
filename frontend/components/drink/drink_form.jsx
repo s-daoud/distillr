@@ -33,7 +33,12 @@ const DrinkForm = React.createClass({
   },
   updateImage(e){
     e.preventDefault();
-    this.setState({image_url: e.target.value});
+    cloudinary.openUploadWidget(window.CLOUDINARY_OPTIONS, this.handleImage);
+  },
+  handleImage(error, images){
+    if (!error) {
+      this.setState({image_url: images[0].secure_url});
+    }
   },
   handleSubmit(e){
     e.preventDefault();
@@ -54,7 +59,7 @@ const DrinkForm = React.createClass({
         {errors}
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.updateName} placeholder="Name"/> <br />
-          <input type="text" onChange={this.updateImage} placeholder="Image URL"/> <br />
+          <button onClick={this.updateImage} id="add-image">Upload Image</button> <br />
           <textarea onChange={this.updateDescription} placeholder="Description" rows="5" cols="50"/> <br />
           <input type="submit" value="Create Drink" id="add"/>
         </form>
