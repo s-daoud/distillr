@@ -10,7 +10,7 @@ class Drink < ActiveRecord::Base
       next if drink.checkins.empty?
       rated_drinks[drink] = (drink.checkins.average(:rating)).round(1)
     end
-    Hash[rated_drinks.sort[0..9]]
+    rated_drinks.sort_by { |_, value| value }.reverse[0..9].to_h
   end
 
   def self.with_ratings

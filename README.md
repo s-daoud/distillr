@@ -148,7 +148,6 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 ### Bonus Features (TBD)
 - [x] upload image when making new drink
-- [ ] infinite scroll for feeds
 - [ ] nearby venues only shows venues in bounds
 - [ ] search for drinks/venues
 - [ ] checkin from drink page with drink already filled in
