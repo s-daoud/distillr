@@ -55,11 +55,11 @@ const ProfilePage = React.createClass({
           }
         });
 
-        // this.state.user.requests.forEach( friend => {
-        //   if (friend.friend_id === parseInt(this.props.params.userId) && friend.user_id === SessionStore.currentUser().id){
-        //     friendButton = <button className="friend-button" id="pending" disabled>Pending</button>;
-        //   }
-        // });
+        this.state.user.requests.forEach( friend => {
+          if (friend.friend_id === parseInt(this.props.params.userId) && friend.user_id === SessionStore.currentUser().id){
+            friendButton = <button className="friend-button" id="pending" disabled>Pending</button>;
+          }
+        });
 
         this.state.user.requests.forEach( friend => {
           if (friend.user_id === this.state.user.id && friend.friend_id === SessionStore.currentUser().id){

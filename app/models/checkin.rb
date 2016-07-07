@@ -1,6 +1,7 @@
 class Checkin < ActiveRecord::Base
   validates :user_id, :drink_id, :rating, presence: true
-  validates :drink_id, :rating, numericality: { greater_than: 0 }
+  validates :rating, numericality: { greater_than: 0 }
+  validate :valid_drink
 
   belongs_to :user
   belongs_to :drink
@@ -28,5 +29,11 @@ class Checkin < ActiveRecord::Base
       friends << req.friend_id
     end
     Checkin.where("user_id IN (?)", friends)
+  end
+
+  def valid_drink
+    if drink_id == 0
+      errors.add(:drink_id, "is not a valid drink")
+    end
   end
 end

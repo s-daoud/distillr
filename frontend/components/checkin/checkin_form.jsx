@@ -6,6 +6,7 @@ const ErrorStore = require('../../stores/error_store');
 const SessionStore = require('../../stores/session_store');
 const DrinkStore = require('../../stores/drink_store');
 const VenueStore = require('../../stores/venue_store');
+const UserStore = require('../../stores/user_store');
 const CheckinActions = require('../../actions/checkin_actions');
 const DrinkActions = require('../../actions/drink_actions');
 const VenueActions = require('../../actions/venue_actions');
@@ -18,18 +19,23 @@ const CheckinForm = React.createClass({
   getInitialState(){
     return ({drink: "", drinkList: {}, venue: "", venueList: {},
             rating: "", initialRating: 0, review: "", focused: false, venueFocused: false,
-            errors: ErrorStore.formErrors("checkin")});
+            errors: ErrorStore.formErrors("checkin"), user: SessionStore.currentUser()});
   },
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.trackErrors);
+    this.userListener = UserStore.addListener(this._onChange);
     DrinkActions.fetchAllDrinks();
     VenueActions.fetchAllVenues();
   },
   componentWillUnmount(){
     this.errorListener.remove();
+    this.userListener.remove();
   },
   trackErrors(){
     this.setState({errors: ErrorStore.formErrors("checkin")});
+  },
+  _onChange(){
+    this.setState({user: UserStore.find(this.state.user.id)});
   },
   updateDrink(e){
     e.preventDefault();
@@ -183,7 +189,7 @@ const CheckinForm = React.createClass({
           <CheckinIndex source={{loc: "feed", id: SessionStore.currentUser().id}}/>
         </div>
         <div className="friend-flex">
-          <UserInfoBox user={SessionStore.currentUser()} />
+          <UserInfoBox user={this.state.user} />
           <FriendRequestIndex />
         </div>
       </div>

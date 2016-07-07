@@ -223,18 +223,18 @@ h4{
   display: inline-block;
   position: absolute;
   top: 17%;
-  left: 66%;
+  left: 68%;
   right: auto;
   bottom: auto;
   margin-right: -50%;
   transform: translate(-50%, -50%);
 }
 
-.checkin-error:nth-child(2){
+.checkin-error:first-child{
   display: inline-block;
   position: absolute;
   top: 41%;
-  left: 66%;
+  left: 68%;
   right: auto;
   bottom: auto;
   margin-right: -50%;

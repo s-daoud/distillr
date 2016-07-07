@@ -7,7 +7,7 @@ const VenueActions = require('../../actions/venue_actions');
 
 const VenueForm = React.createClass({
   getInitialState(){
-    return ({name: "", description: "", address: "", errors: ErrorStore.formErrors("venue")});
+    return ({name: "", description: "", errors: ErrorStore.formErrors("venue")});
   },
   componentDidMount(){
     this.errorListener = ErrorStore.addListener(this.trackErrors);
@@ -16,6 +16,8 @@ const VenueForm = React.createClass({
         ErrorActions.clearErrors(error);
       });
     }
+    const input = document.getElementById('address');
+    this.autocomplete = new google.maps.places.Autocomplete(input);
   },
   componentWillUnmount(){
     this.errorListener.remove();
@@ -31,15 +33,12 @@ const VenueForm = React.createClass({
     e.preventDefault();
     this.setState({description: e.target.value});
   },
-  updateAddress(e){
-    e.preventDefault();
-    this.setState({address: e.target.value});
-  },
   handleSubmit(e){
     e.preventDefault();
+    let place = this.autocomplete.getPlace();
     VenueActions.createVenue({name: this.state.name, description: this.state.description,
-                              address: this.state.address});
-    this.setState({name: "", description: "", address: ""});
+                              address: place.formatted_address});
+    this.setState({name: "", description: ""});
     this.props.closeModal();
   },
   render(){
@@ -55,7 +54,7 @@ const VenueForm = React.createClass({
         {errors}
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.updateName} placeholder="Name"/> <br />
-          <input type="text" onChange={this.updateAddress} placeholder="Address"/> <br />
+          <input type="text" placeholder="Address" id="address"/> <br />
           <textarea onChange={this.updateDescription} placeholder="Description" rows="5" cols="50"/> <br />
           <input type="submit" value="Create Venue" id="add"/>
         </form>
