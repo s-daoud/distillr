@@ -134,7 +134,8 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 **Objective:** Polish everything, make everything cohesive and pretty and functional
 
 - [x] add seeds
-- [ ] clean up CSS, refactor
+- [x] clean up CSS, refactor
+- [x] bonus features!
 
 ### Phase 9: Make sure everything's complete! (1 day, W2D5)
 
