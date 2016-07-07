@@ -1,11 +1,16 @@
 class Api::VenuesController < ApplicationController
   def index
-    if params[:loc] == "ratings"
-      @venues = Venue.by_ratings
+    if params[:loc] == "nearby"
+      @venues = Venue.by_distance(params[:lat], params[:lng])
+      render :index
     else
-      @venues = Venue.with_ratings
+      if params[:loc] == "ratings"
+        @venues = Venue.by_ratings
+      else
+        @venues = Venue.with_ratings
+      end
+      render :ratings
     end
-    render :ratings
   end
 
   def create

@@ -3,7 +3,9 @@ rated_venues = @venues.reduce([]) do |acc, (key, value)|
              name: key.name,
              id: key.id,
              description: key.description,
-             address: key.address
+             address: key.address,
+             lat: key.latitude,
+             lng: key.longitude
           })
 end
 

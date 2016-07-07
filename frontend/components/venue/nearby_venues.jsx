@@ -13,9 +13,9 @@ const NearbyVenues = React.createClass({
   },
   componentDidMount(){
     this.venueListener = VenueStore.addListener(this._onChange);
-    VenueActions.fetchAllVenues();
     navigator.geolocation.getCurrentPosition( position => {
-      this.makeMap(position.coords.latitude, position.coords.longitude);
+      this.position = position;
+      VenueActions.fetchAllVenues({loc: "nearby", lat: position.coords.latitude, lng: position.coords.longitude});
     });
   },
   componentWillUnmount(){
@@ -23,6 +23,7 @@ const NearbyVenues = React.createClass({
   },
   _onChange(){
     this.setState({venues: VenueStore.all()});
+    this.makeMap(this.position.coords.latitude, this.position.coords.longitude);
   },
   makeMap(lat, lng){
     const mapDOMNode = ReactDOM.findDOMNode(this.refs.nearbyMap);
@@ -47,26 +48,16 @@ const NearbyVenues = React.createClass({
     this.setMarkers({lat: lat, lng: lng});
   },
   setMarkers(clientLocation){
-    const geocoder = new google.maps.Geocoder();
-    let clientLatLng = new google.maps.LatLng(clientLocation);
-    let venues = Object.assign([], this.state.venues);
     let coordVenues = {};
-    let count = 0;
+    let clientLatLng = new google.maps.LatLng(clientLocation);
 
-
-    venues.slice(0, 10).forEach( venue => {
-      geocoder.geocode( {"address": venue.address}, (results, status) => {
-        debugger
-        let latLng = new google.maps.LatLng({lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng()});
-        let dist = google.maps.geometry.spherical.computeDistanceBetween(clientLatLng, latLng);
-        coordVenues[dist] = { venue, latLng };
-
-        count++;
-        if (count === venues.slice(0, 10).length) {
-          this.addMarkers(coordVenues);
-        }
-      });
+    this.state.venues.forEach (venue => {
+      let latLng = new google.maps.LatLng({lat: venue.lat, lng: venue.lng});
+      let dist = google.maps.geometry.spherical.computeDistanceBetween(clientLatLng, latLng);
+      coordVenues[dist] = { venue, latLng };
     });
+
+    this.addMarkers(coordVenues);
   },
   addMarkers(coordVenues){
     const dists = Object.keys(coordVenues).sort( (a, b) => {
@@ -82,8 +73,9 @@ const NearbyVenues = React.createClass({
         title: coordVenues[dist].venue.name
       });
       sortedVenues.push(coordVenues[dist].venue);
-      this.setState({sortedVenues: sortedVenues});
     });
+    debugger
+    this.setState({sortedVenues: sortedVenues});
   },
   render(){
     let sortedVenues;

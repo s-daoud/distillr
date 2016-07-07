@@ -4,6 +4,9 @@ class Venue < ActiveRecord::Base
 
   has_many :checkins
 
+  geocoded_by :address
+  after_validation :geocode
+
   def self.by_ratings
     rated_venues = {}
     @venues = Venue.all
@@ -36,5 +39,9 @@ class Venue < ActiveRecord::Base
       rated_venue[venue] = (venue.checkins.average(:rating)).round(1)
     end
     rated_venue
+  end
+
+  def self.by_distance(lat, lng)
+    Venue.near([lat, lng], 0.5)
   end
 end

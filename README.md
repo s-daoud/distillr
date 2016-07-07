@@ -134,15 +134,14 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 **Objective:** Polish everything, make everything cohesive and pretty and functional
 
 - [x] add seeds
-- [ ] implement a few more bonus features
 - [ ] clean up CSS, refactor
 
 ### Phase 9: Make sure everything's complete! (1 day, W2D5)
 
 **Objective:** More polish, make production README and any other final, non-technical touches
 
-- [ ] make production README
 - [x] make sure dyno doesn't sleep
+- [ ] make production README
 - [ ] buy domain name
 
 
@@ -150,7 +149,7 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [x] upload image when making new drink
 - [x] address in add venue autocompletes with addresses
 - [ ] nearby venues only shows venues in bounds
-- [ ] search for drinks/venues
+- [ ] search for drinks/venues/users
 - [ ] checkin from drink page with drink already filled in
 - [ ] checkin from venue page with venue already filled in
 - [ ] badges
