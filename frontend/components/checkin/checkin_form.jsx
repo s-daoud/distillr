@@ -104,7 +104,7 @@ const CheckinForm = React.createClass({
                                   venue_id: parseInt(venueId),
                                   rating: parseInt(this.state.rating),
                                   review: this.state.review});
-    this.setState({drink: "", rating: "", review: "", initialRating: 0});
+    this.setState({drink: "", drinkList: {}, venue: "", venueList: {}, rating: "", review: "", initialRating: 0});
   },
   focus(e){
     e.preventDefault();

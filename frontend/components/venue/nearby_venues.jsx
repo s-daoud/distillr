@@ -52,13 +52,17 @@ const NearbyVenues = React.createClass({
     let venues = Object.assign([], this.state.venues);
     let coordVenues = {};
     let count = 0;
-    venues.forEach( venue => {
-      geocoder.geocode( {"address": venue.address}, results => {
+
+
+    venues.slice(0, 10).forEach( venue => {
+      geocoder.geocode( {"address": venue.address}, (results, status) => {
+        debugger
         let latLng = new google.maps.LatLng({lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng()});
         let dist = google.maps.geometry.spherical.computeDistanceBetween(clientLatLng, latLng);
         coordVenues[dist] = { venue, latLng };
+
         count++;
-        if (count === venues.length) {
+        if (count === venues.slice(0, 10).length) {
           this.addMarkers(coordVenues);
         }
       });
@@ -83,11 +87,13 @@ const NearbyVenues = React.createClass({
   },
   render(){
     let sortedVenues;
+    let venueSelection;
 
     if(this.state.sortedVenues){
       sortedVenues = this.state.sortedVenues.map( venue => {
         return <NearbyVenueItem venue={venue} key={venue.id}/>;
       });
+      venueSelection = sortedVenues.slice(0, 5);
     }
 
     return(
@@ -99,7 +105,7 @@ const NearbyVenues = React.createClass({
         <div className="feed">
           <h3>Venues By Distance</h3>
           <div className="friend-box">
-            {sortedVenues}
+            {venueSelection}
           </div>
         </div>
       </div>

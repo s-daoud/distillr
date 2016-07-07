@@ -11,21 +11,21 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
-- [ ] Checkins
+- [x] Checkins
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+  - [x] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
-- [ ] Feed
+- [x] Feed
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+  - [x] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
-- [ ] Friends
+- [x] Friends
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+  - [x] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
-- [ ] Profile
+- [x] Profile
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+  - [x] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
 
 ## Design Docs
@@ -133,7 +133,7 @@ Distillr is a web application inspired by Untappd that will be built using Ruby 
 
 **Objective:** Polish everything, make everything cohesive and pretty and functional
 
-- [ ] add seeds
+- [x] add seeds
 - [ ] implement a few more bonus features
 - [ ] clean up CSS, refactor
 
