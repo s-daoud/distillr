@@ -7,6 +7,7 @@ const SessionStore = require('../stores/session_store');
 
 const DrinkForm = require('./drink/drink_form');
 const VenueForm = require('./venue/venue_form');
+const Search = require('./search');
 
 const NavBar = React.createClass({
   getInitialState(){
@@ -70,6 +71,9 @@ const NavBar = React.createClass({
                   <li className="clickable" onClick={this.goToTopRated}>
                     Top Rated
                   </li>
+                  <li>
+                    <Search />
+                  </li>
               </ul>
             </ul>
             <Modal isOpen={this.state.modalOpen}
@@ -78,7 +82,7 @@ const NavBar = React.createClass({
               {this.modalComponent}
             </Modal>
             <ul className="header-list">
-              <a href="#">
+                <a href="#">
                 <li className="dropdown">
                   {SessionStore.currentUser().username}&nbsp;&nbsp;<i className="fa fa-caret-down"></i>
                   <ul className="dropdown-list">

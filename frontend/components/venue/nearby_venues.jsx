@@ -74,7 +74,6 @@ const NearbyVenues = React.createClass({
       });
       sortedVenues.push(coordVenues[dist].venue);
     });
-    debugger
     this.setState({sortedVenues: sortedVenues});
   },
   render(){

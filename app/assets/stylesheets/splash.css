@@ -7,7 +7,7 @@ h1{
   font-size: 72px;
 }
 
-input[type="text"], input[type="password"], textarea{
+input[type="text"], input[type="password"], input[type="search"], textarea{
   padding: 5px;
   margin: 5px 0;
   border: solid 1px #c9c9c9;
@@ -17,7 +17,7 @@ input[type="text"], input[type="password"], textarea{
   color: #000;
 }
 
-input[type="text"]:focus, input[type="password"]:focus, textarea:focus{
+input[type="text"]:focus, input[type="password"]:focus, input[type="search"]:focus, textarea:focus{
   border: solid 1px #969696;
 }
 
