@@ -14,7 +14,7 @@ class Venue < ActiveRecord::Base
       next if venue.checkins.empty?
       rated_venues[venue] = (venue.checkins.average(:rating)).round(1)
     end
-    Hash[rated_venues.sort[0..9]]
+    rated_venue.sort_by { |_, value| value }.reverse[0..9].to_h
   end
 
   def self.with_ratings
