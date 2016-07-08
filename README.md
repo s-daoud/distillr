@@ -50,6 +50,8 @@ Comments and likes on individual checkins are also stored within the `CheckinSto
 
 Checkins are rendered in the `CheckinIndex`, which consists of many child `CheckinIndexItem` components. These in turn have a `CommentIndex`, which renders many `CommentIndexItems`. The `CheckinIndexItem` also contains a `CheckinLikes` component which simply allows for a cheers button and renders the number of likes a checkin has received.
 
+![checkin]
+
 ### Drinks and Venues
 
 Drinks and venues were handled very similarly, and implementing venues later in the project was very simple because the framework for drinks had already been established.
@@ -92,9 +94,13 @@ return (
 
 Venues are also rendered in the `NearbyVenues` component. This uses a combination of the geocoder gem and the Google Maps Distance Matrix API to display venues within half a mile of the client browser location, and lists them in order of proximity as a `NearbyVenueItem`.
 
+![nearby]
+
 ### Profile and Friends
 
 Users are also stored in a `UserStore`. Each user has a `ProfilePage` component and a `UserInfoBox` component. The info box provided some interesting stats about the user, such as the number of friends and unique drinks consumed, and is rendered on both the main feed and individual profile pages. The profile contains all the user's checkins, as well as their friend status with the current user.
+
+![stats]
 
 Friends are managed through the `Friend` join table, which consists of a `user_id` column for the requester, a `friend_id` column for the requested, and a `status` column that defaults to pending. If there is a pending request between two people, no matter who sent it, the friend button on both their pages when they view each other will be greyed out.
 
@@ -120,9 +126,11 @@ end
 
 The `FriendRequestIndex` renders all received friend requests on both the main feed and on the `FriendIndex`, allowing a user to easily accept or reject a request. In addition, the `FriendIndex` contains a list of `FriendIndexItem` components which show a user all their current friends and easily gives them the ability to visit a friend's profile or remove them as a friend.
 
+![friends]
+
 ### Navbar
 
-The `NavBar` component is part of the root route, and sits on every page that a user encounters while logged in. 
+The `NavBar` component is part of the root route, and sits on every page that a user encounters while logged in.
 
 ```javascript
 const App = React.createClass({
@@ -145,7 +153,7 @@ const App = React.createClass({
 
 The `NavBar` contains links to many of the other routes as described above, as well as a dropdown which lets the current user easily navigate around their information, linking to their feed, profile, and friends, as well as letting them log out.
 
-It also contains a `Search` component, which listens to the `UserStore`, `DrinkStore`, and `VenueStore`. This component allows users to type a string and matches it to an item in any of those three stores. Upon either writing the entirety of the string and hitting enter, or simply clicking on one of the options that show up in a filtered dropdown, they will be redirected to the appropriate page. 
+It also contains a `Search` component, which listens to the `UserStore`, `DrinkStore`, and `VenueStore`. This component allows users to type a string and matches it to an item in any of those three stores. Upon either writing the entirety of the string and hitting enter, or simply clicking on one of the options that show up in a filtered dropdown, they will be redirected to the appropriate page.
 
 ```javascript
 autoUser(userId){
@@ -181,3 +189,8 @@ Earning badges is a standard feature of Untappd. Users can gain these badges bas
 ### Easier checkins
 
 Users will have the ability to check in directly from a drink or venue page with that form element already filled out.
+
+[checkin]: ./docs/screenshots/checkin.png
+[nearby]: ./docs/screenshots/nearby.png
+[stats]: ./docs/screenshots/stats.png
+[friends]: ./docs/screenshots/friends.png
