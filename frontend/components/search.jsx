@@ -52,12 +52,15 @@ const Search = React.createClass({
   },
   autoUser(userId){
     hashHistory.push(`users/${userId}`);
+    this.setState({search: ""});
   },
   autoDrink(drinkId){
     hashHistory.push(`drinks/${drinkId}`);
+    this.setState({search: ""});
   },
   autoVenue(venueId){
     hashHistory.push(`venues/${venueId}`);
+    this.setState({search: ""});
   },
   handleSubmit(){
     if (Object.keys(this.state.drinkList).length !== 0 && this.state.drinkList.constructor === Object) {
@@ -67,6 +70,7 @@ const Search = React.createClass({
     } else if (Object.keys(this.state.userList).length !== 0 && this.state.userList.constructor === Object) {
       hashHistory.push(`users/${this.state.userList[Object.keys(this.state.userList)[0]].id}`);
     }
+    this.setState({search: ""});
   },
   render(){
     let drinkList = this.state.drinkList;
